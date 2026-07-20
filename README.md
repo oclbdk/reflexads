@@ -8,7 +8,9 @@ build time, so the two never drift apart.
 
 Each chapter module is **standalone**: it defines everything it needs
 (including primitives like propositional equality) and imports nothing from
-other chapters or a shared prelude, so a chapter can be read on its own.
+other chapters or a shared prelude, so a chapter can be read on its own. The
+one deliberate exception is Chapter 7, the finale, which imports Chapter 6 and
+enriches it without reopening — the compositional layering it is about.
 
 ## Layout
 
@@ -23,6 +25,7 @@ src/
     Chapter04.agda        standalone companion code for chapter 4 (postulates funext)
     Chapter05.agda        standalone companion code for chapter 5 (--safe)
     Chapter06.agda        standalone companion code for chapter 6 (postulates funext)
+    Chapter07.agda        chapter 7 — imports Chapter 6 and layers on it
 book/
   book.typ                book entry point; includes each chapter
   lib/template.typ        styling + the `agda()` source-inclusion helper
@@ -33,6 +36,7 @@ book/
     04-holding-itself-up.typ            chapter 4 prose
     05-pinning-itself-down.typ          chapter 5 prose
     06-buffering-itself.typ             chapter 6 prose
+    07-reintroduction.typ               chapter 7 prose
 Makefile                  check / book / watch / clean
 ```
 

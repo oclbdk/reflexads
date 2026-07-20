@@ -10,6 +10,4 @@
 #include "chapters/04-holding-itself-up.typ"
 #include "chapters/05-pinning-itself-down.typ"
 #include "chapters/06-buffering-itself.typ"
-
-// Add each new chapter here as it is written:
-// #include "chapters/07-....typ"
+#include "chapters/07-reintroduction.typ"
