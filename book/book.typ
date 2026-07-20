@@ -5,6 +5,7 @@
 )
 
 #include "chapters/01-introduction.typ"
+#include "chapters/02-chapter-two.typ"
 
 // Add each new chapter here as it is written:
-// #include "chapters/02-....typ"
+// #include "chapters/03-....typ"

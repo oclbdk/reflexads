@@ -15,7 +15,11 @@
 
 module Reflexads.Chapter01 where
 
-open import Reflexads.Prelude using (_≡_)
+-- This module is standalone: it defines everything it needs, so the chapter
+-- can be read on its own, with no dependence on other chapters or a shared
+-- prelude. Propositional equality is defined locally.
+data _≡_ {A : Set} (x : A) : A → Set where
+  refl : x ≡ x
 
 private
   variable
