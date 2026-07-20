@@ -21,6 +21,7 @@ src/
     Chapter02.agda        standalone companion code for chapter 2 (--safe)
     Chapter03.agda        standalone companion code for chapter 3 (postulates funext)
     Chapter04.agda        standalone companion code for chapter 4 (postulates funext)
+    Chapter05.agda        standalone companion code for chapter 5 (--safe)
 book/
   book.typ                book entry point; includes each chapter
   lib/template.typ        styling + the `agda()` source-inclusion helper
@@ -29,12 +30,13 @@ book/
     02-contextualized-ownership.typ     chapter 2 prose
     03-situated-on-shared-ground.typ    chapter 3 prose
     04-holding-itself-up.typ            chapter 4 prose
+    05-pinning-itself-down.typ          chapter 5 prose
 Makefile                  check / book / watch / clean
 ```
 
-Chapters 1 and 2 are individually `--safe`; Chapters 3 and 4 step out of
+Chapters 1, 2, and 5 are individually `--safe`; Chapters 3 and 4 step out of
 `--safe` to postulate function extensionality (their hosting face reads
-functions of the ground).
+functions of the ground, where the owning face of Chapter 5 does not).
 
 ## Building
 
