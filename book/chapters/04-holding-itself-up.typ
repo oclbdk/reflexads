@@ -134,7 +134,10 @@ An idempotent ground is a ground of interactions that are _safe to repeat_ —
 where doing the same thing twice, in the same place, is the same as doing it
 once. Reground, re-read, retry: all free. The flatness that keeps contextual
 sequencing from spiraling is, underneath, nothing more exotic than interactions
-that do not compound when repeated.
+that do not compound when repeated — which is why, in any system where the same
+thing may happen twice, you reach for operations built to be idempotent, and why
+doing so buys safety by construction rather than by hoping the duplicate never
+arrives.
 
 == The flat form it settles onto
 

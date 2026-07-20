@@ -115,6 +115,13 @@ exactly why the system settles onto a converged value and stays there. A CRDT is
 a self-buffer: replication and reconciliation reflecting each other until the
 divergence flushes onto a shared ground.
 
+That is also the recipe, if you are building one. To make something that
+converges without a coordinator — no lock, no consensus round — you do not
+orchestrate the replicas; you make the merge _reconcile_ them onto a shared
+ground and make it _idempotent_, so that duplicated and re-delivered updates
+cannot break it. Convergence becomes a property of the structure, not of the
+schedule.
+
 One honest line of scope, the same knife as Chapter 5. A _classic_ CRDT — where
 any merge schedule reaches the same value — needs the band to be commutative:
 order-free convergence. The general, non-commutative band buffers just as safely

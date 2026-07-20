@@ -50,9 +50,12 @@ a coherent idea at all: if grouping mattered, a sequence of three interactions
 would have two possibly-different meanings depending on which pair you combined
 first, and "the context so far" would be ambiguous. Associativity is the
 condition that says the sequence alone settles the result — the bracketing is
-yours to choose, the same freedom you use every time you refactor. So a monoid
-is two things at once: a set of interactions, and the conditions those
-interactions satisfy. That is precisely why it models the Ground — it is an
+yours to choose, the same freedom you use every time you pull three steps into a
+helper or fold two into one and never wonder whether the meaning survived. What
+that freedom does _not_ cover is order: regrouping a run of interactions is safe,
+reordering it is not, and in any domain where sequence carries meaning that is
+the exact line a refactoring may not cross. So a monoid is two things at once: a
+set of interactions, and the conditions those interactions satisfy. That is precisely why it models the Ground — it is an
 interaction space that _carries its own conditions_, bundled into a single
 object, which is the property this whole book is chasing.
 
@@ -130,8 +133,13 @@ on. The structure does not _assume_ its central condition; it _gets_ it, from
 the ground it owns. (The unit laws come the same way.) This is the first
 concrete thing we can point at when we say a structure hosts its own
 conditions: the condition is sourced from the ground, not decreed from
-outside. It is a small instance — one law, one ground — but it is real, and it
-is the shape the rest of the book keeps widening.
+outside. And that already tells you where a domain's invariants belong — not
+scattered across the operations that touch the context, re-checked at each call
+site, but concentrated once in the algebra of the ground, where everything that
+accumulates over it inherits them for free. Get the ground right and the
+coherence of all that stands on it is settled in one place. It is a small
+instance — one law, one ground — but it is real, and it is the shape the rest of
+the book keeps widening.
 
 == One ground, more than one use
 

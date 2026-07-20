@@ -140,10 +140,12 @@ makings of a genuine cycle.
 
 That is the whole of what we have earned so far: the layer is worth having,
 because it turns bare machinery into a structure that can host the conditions it
-owns. What we have _not_ done is say precisely what makes something a Reflad, a
-Flexad, a Reflexad — the defining properties each variant keeps over the ground,
-and the law that actually _binds_ the owning to the hosting rather than merely
-setting them side by side. The concrete Writer and Exponent of this chapter
-illustrate the shapes; they are not the definitions of the abstractions. Pinning
-those down — and finding the law that closes the two faces into one bound thing
-— is where we turn next.
+owns. What we have _not_ done is say what each face, left alone, settles to — the
+property that makes a hosting face _self_-hosting, an owning face self-selecting,
+each already a fixed point of its own. That is the work of the next two chapters,
+one face at a time. Only after it does the harder question follow: the law that
+actually _binds_ owning to hosting — that forces the conditions laid down to be
+the conditions read — rather than leaving them side by side on a shared ground.
+The concrete Writer and Exponent here illustrate the shapes; the self-properties
+that pin them down, and the binding that closes the two faces into one, are what
+we turn to next, and last.

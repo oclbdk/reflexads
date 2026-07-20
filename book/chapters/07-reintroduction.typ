@@ -201,16 +201,10 @@ agree.
 == The book, reintroduced
 
 There is one last instance of all this, and it has been in your hands the whole
-time.
-
-This book demonstrates its own two moves, honestly. Each chapter is a _sealed,
-transferable unit_: self-contained, defining what it needs, checkable and
-readable on its own — you could lift any one out and it would stand. That is the
-transferable-encoding property, shown six times over, and it is why the chapters
-could be standalone at all. And this last chapter shows the other move, the
-_layering_: it imports the sixth and enriches it without reopening a line. Sealed
-units that hold themselves up, and clean layers over them — the book was built
-out of exactly the two things it tells you to build with.
+time. This book is built out of exactly the two moves it names: each chapter is a
+sealed, transferable unit — self-contained, checkable and readable on its own,
+liftable out — and this final chapter is the layer over the sixth, enriching it
+without reopening a line.
 
 And it was built in both streams at once. It is Agda you can run and prose you
 can prompt, the same reflexadic structure encoded twice, in the two languages

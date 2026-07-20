@@ -162,7 +162,13 @@ is present_ and throws away the _log of how often_ — it is the distinction
 between state and history exactly. Self-selection is native to _state_: a
 configuration, a set of members, a value that does not care how many writes
 produced it. It is hostile to _history_: an audit trail, a retry that must count,
-a sequence whose repetitions carry meaning. The reflad was invented, back in
+a sequence whose repetitions carry meaning. So it is a modeling decision worth
+making on purpose, and early — ask whether your domain needs to _count_. If it
+only ever needs to know what is currently the case — the present configuration,
+the set of members, the latest value — you can model it as state, and the
+self-properties are yours: idempotent merges, safe replays, conflict-free
+convergence. If it needs the tally, how many times and in what exact succession,
+you cannot have them, and you must keep the log. The reflad was invented, back in
 Chapter 2, to accumulate causal history; the price of one-step self-holding is
 that it must forget the part of history that counts, and keep only the part that
 _orders_. Most grounds are not bands, and that is no defect — it is where the
