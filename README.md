@@ -13,20 +13,26 @@ other chapters or a shared prelude, so a chapter can be read on its own.
 ## Layout
 
 ```
-reflexads.agda-lib        Agda library manifest (self-contained, --safe)
+reflexads.agda-lib        Agda library manifest (self-contained)
 src/
   Everything.agda         imports every chapter module; check this to check all
   Reflexads/
-    Chapter01.agda        standalone companion code for chapter 1
-    Chapter02.agda        standalone companion code for chapter 2
+    Chapter01.agda        standalone companion code for chapter 1 (--safe)
+    Chapter02.agda        standalone companion code for chapter 2 (--safe)
+    Chapter03.agda        standalone companion code for chapter 3 (postulates funext)
 book/
   book.typ                book entry point; includes each chapter
   lib/template.typ        styling + the `agda()` source-inclusion helper
   chapters/
-    01-introduction.typ   chapter 1 prose
-    02-contextualized-ownership.typ  chapter 2 prose
+    01-introduction.typ                 chapter 1 prose
+    02-contextualized-ownership.typ     chapter 2 prose
+    03-situated-on-shared-ground.typ    chapter 3 prose
 Makefile                  check / book / watch / clean
 ```
+
+Chapters 1 and 2 are individually `--safe`; Chapter 3 steps out of `--safe`
+to postulate function extensionality (its situated face reads functions of
+the ground).
 
 ## Building
 
