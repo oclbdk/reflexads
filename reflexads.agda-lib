@@ -1,0 +1,4 @@
+name: reflexads-book
+include: src
+depend: standard-library
+flags: --safe

@@ -1,0 +1,11 @@
+# Agda interface files
+*.agdai
+_build/
+MAlonzo/
+
+# Book output
+/build/
+
+# Editor / OS
+*~
+.DS_Store
