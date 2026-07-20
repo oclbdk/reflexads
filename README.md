@@ -24,7 +24,7 @@ book/
   lib/template.typ        styling + the `agda()` source-inclusion helper
   chapters/
     01-introduction.typ   chapter 1 prose
-    02-chapter-two.typ    chapter 2 prose
+    02-contextualized-ownership.typ  chapter 2 prose
 Makefile                  check / book / watch / clean
 ```
 

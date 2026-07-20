@@ -5,7 +5,7 @@
 )
 
 #include "chapters/01-introduction.typ"
-#include "chapters/02-chapter-two.typ"
+#include "chapters/02-contextualized-ownership.typ"
 
 // Add each new chapter here as it is written:
 // #include "chapters/03-....typ"
