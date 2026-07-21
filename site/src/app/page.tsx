@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import { ArrowRightIcon } from '@heroicons/react/16/solid'
 import { chapters } from '@/data/chapters'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { LayersWidget } from '@/components/site/widgets/layers'
 
 export default function Home() {
   return (
@@ -30,21 +28,6 @@ export default function Home() {
           >
             Source &amp; PDF
           </a>
-        </div>
-      </section>
-
-      <section className="border-b border-zinc-950/5 py-12 dark:border-white/10">
-        <p className="text-sm/6 text-zinc-600 dark:text-zinc-300">
-          These workflows run on three layers at once, each at its own rate:{' '}
-          <em className="italic">conditions</em> (systemic effects, shifting requirements),{' '}
-          <em className="italic">operations</em> (prompts, calls, edits — where code, prose, and data
-          intermix), and <em className="italic">instructions</em> (the raw stream). They feed each
-          other, and that coupling is where reasoning gets hard.
-        </p>
-        <div className="mt-5">
-          <WidgetFrame title="Three layers, feeding each other">
-            <LayersWidget />
-          </WidgetFrame>
         </div>
       </section>
 

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { ChapterShell } from '@/components/site/chapter-shell'
 import { CodeCard } from '@/components/site/code-card'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { LoopWidget } from '@/components/site/widgets/loop'
 import { H2, Lead, P, Em, InlineCode } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Introduction' }
@@ -58,12 +56,6 @@ export default function Page() {
         words. That is the whole job it does throughout.
       </P>
 
-      <WidgetFrame
-        title="Grounds out, or spins?"
-        hint="A monad grounds out: there is always a base value, and every flatten winds the nesting down toward it. Take away the base and the same shape has no floor — the import loop that borrows all its meaning and never settles."
-      >
-        <LoopWidget />
-      </WidgetFrame>
     </ChapterShell>
   )
 }

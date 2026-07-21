@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { ChapterShell } from '@/components/site/chapter-shell'
 import { CodeCard } from '@/components/site/code-card'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { GroundWidget } from '@/components/site/widgets/ground'
 import { H2, Lead, P, Em } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Situated on Shared Ground' }
@@ -44,12 +42,6 @@ export default function Page() {
 
       <CodeCard module="Chapter03" tag="reflexad" caption="Both faces, standing on one shared ground." />
 
-      <WidgetFrame
-        title="Write, then read"
-        hint="The owning face writes the whole history; the hosting face reads it from a position. Same ground, two faces — and the reader moving changes nothing about what was written."
-      >
-        <GroundWidget />
-      </WidgetFrame>
     </ChapterShell>
   )
 }

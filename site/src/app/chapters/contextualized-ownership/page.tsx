@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { ChapterShell } from '@/components/site/chapter-shell'
 import { CodeCard } from '@/components/site/code-card'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { WriterWidget } from '@/components/site/widgets/writer'
 import { H2, Lead, P, Em, InlineCode } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Contextualized Ownership' }
@@ -26,12 +24,6 @@ export default function Page() {
 
       <CodeCard module="Chapter02" tag="monoid" caption="The Ground: a monoid, elements and the conditions they obey." />
 
-      <WidgetFrame
-        title="The Ground is a monoid"
-        hint="Regrouping is free; reordering is not. That gap is the whole reason a sequence has a well-defined meaning but still remembers its order."
-      >
-        <WriterWidget />
-      </WidgetFrame>
 
       <H2>The owning tower</H2>
       <P>

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { ChapterShell } from '@/components/site/chapter-shell'
 import { CodeCard } from '@/components/site/code-card'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { StateHistoryWidget } from '@/components/site/widgets/state-history'
 import { H2, Lead, P, Em, InlineCode } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Pinning Itself Down' }
@@ -42,12 +40,6 @@ export default function Page() {
         replays, and conflict-free convergence are yours. If it needs the tally, keep the log.
       </P>
 
-      <WidgetFrame
-        title="State, or history?"
-        hint="The same writes into two grounds. As a set, replaying a write is a no-op — it self-selects. As a counted log, the replay double-counts. Idempotence forgets multiplicity, and leaves order alone."
-      >
-        <StateHistoryWidget />
-      </WidgetFrame>
     </ChapterShell>
   )
 }

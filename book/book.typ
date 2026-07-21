@@ -2,6 +2,7 @@
 
 #show: book.with(
   title: "Reflexads Book",
+  status: "Early concept — under active development",
 )
 
 #include "chapters/01-introduction.typ"

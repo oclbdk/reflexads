@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { ChapterShell } from '@/components/site/chapter-shell'
 import { CodeCard } from '@/components/site/code-card'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { CrdtWidget } from '@/components/site/widgets/crdt'
 import { H2, Lead, P, Em, InlineCode } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Buffering Itself' }
@@ -43,12 +41,6 @@ export default function Page() {
         of the structure, not the schedule.
       </P>
 
-      <WidgetFrame
-        title="A grow-only set converges"
-        hint="Add elements to either replica, gossip in either direction, re-deliver a message to itself — duplicates and order never break it, and both replicas land on the same ground."
-      >
-        <CrdtWidget />
-      </WidgetFrame>
 
       <P>
         One honest line of scope: a <Em>classic</Em> CRDT, where any schedule reaches the same

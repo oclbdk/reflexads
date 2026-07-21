@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { ChapterShell } from '@/components/site/chapter-shell'
 import { CodeCard } from '@/components/site/code-card'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { WindowsWidget } from '@/components/site/widgets/windows'
 import { H2, Lead, P, Em } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Reintroduction' }
@@ -49,12 +47,6 @@ export default function Page() {
         order lines up, for a while, with something a human can interpret.
       </P>
 
-      <WidgetFrame
-        title="Windows of coherence"
-        hint="You cannot read the loop, only its stream, and only a window at a time. Slide the window to read a span; let the machine run on and a held window fills with new operations."
-      >
-        <WindowsWidget />
-      </WidgetFrame>
     </ChapterShell>
   )
 }

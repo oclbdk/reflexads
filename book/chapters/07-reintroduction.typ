@@ -43,9 +43,10 @@ prompts are to prose: one stream executed by silicon, the other by a model, the
 same shape underneath.
 
 The two directions of either stream are the reflad and the flexad, wearing
-computation. Forward, the stream is a _prediction_: the next operation, the
-expected continuation, what the accumulated state projects onward: a branch
-predictor is this literally, and a misprediction is a residual to reconcile.
+computation. Forward, the stream is a _prediction_, an _expectation_ of what
+comes next: the next operation, the expected continuation, what the accumulated
+state projects onward: a branch predictor is this literally, and a misprediction
+is a residual to reconcile.
 Backward, each value is an _explanation_: the operation that produced it, its
 provenance, the dependency it answers to, and that direction is _irreversible_,
 which is the oldest word in the book. You cannot un-retire an instruction,
@@ -70,7 +71,7 @@ rest of the computation inherits.
 == The sequence keeps time
 
 So where, in all this, is time? Not in the loop. The reflexad, the dependency
-structure, the relation of prediction to explanation, has no clock; it is
+structure, the relation of expectation to explanation, has no clock; it is
 Chapter 6's still point, a fixed shape that holds itself up. The clock is the
 _sequence_: program order, the counter that advances, the turn that follows the
 turn. The loop is not the clock; the stream is.

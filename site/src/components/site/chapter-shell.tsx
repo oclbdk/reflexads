@@ -32,7 +32,7 @@ export function ChapterShell({ slug, children }: { slug: string; children: React
             <span className="flex items-center gap-1 text-xs/5 text-zinc-500 dark:text-zinc-400">
               <ArrowLongLeftIcon className="size-4" /> Chapter {prev.number}
             </span>
-            <span className="font-medium text-zinc-950 dark:text-white">{prev.title}</span>
+            <span className="font-medium text-zinc-950 group-hover:text-reflex-600 dark:text-white dark:group-hover:text-reflex-500">{prev.title}</span>
           </Link>
         ) : (
           <span className="flex-1" />
@@ -45,7 +45,7 @@ export function ChapterShell({ slug, children }: { slug: string; children: React
             <span className="flex items-center gap-1 text-xs/5 text-zinc-500 dark:text-zinc-400">
               Chapter {next.number} <ArrowLongRightIcon className="size-4" />
             </span>
-            <span className="font-medium text-zinc-950 dark:text-white">{next.title}</span>
+            <span className="font-medium text-zinc-950 group-hover:text-reflex-600 dark:text-white dark:group-hover:text-reflex-500">{next.title}</span>
           </Link>
         ) : (
           <span className="flex-1" />

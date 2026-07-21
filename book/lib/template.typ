@@ -1,12 +1,22 @@
 // Book-wide styling and helpers.
 
-#let book(title: "", author: "", body) = {
+#let book(title: "", author: "", status: "", body) = {
   set document(title: title, author: author)
   set page(
     paper: "a4",
     margin: (x: 3.5cm, y: 3.5cm),
     numbering: "1",
     number-align: center,
+    footer: context {
+      set text(size: 8pt, fill: luma(140))
+      grid(
+        columns: (1fr, auto, 1fr),
+        align: (left, center, right),
+        if status != "" { status } else { [] },
+        counter(page).display("1"),
+        [],
+      )
+    },
   )
   set text(font: "New Computer Modern", size: 11pt, lang: "en")
   set par(justify: true, leading: 0.7em)
@@ -23,6 +33,10 @@
   // Title page.
   align(center + horizon)[
     #text(size: 30pt, weight: "bold", title)
+    #if status != "" [
+      #v(1.2em)
+      #text(size: 12pt, style: "italic", fill: luma(90), status)
+    ]
     #if author != "" [
       #v(1em)
       #text(size: 14pt, author)

@@ -2,7 +2,7 @@
 
 import * as Headless from '@headlessui/react'
 import clsx from 'clsx'
-import { LayoutGroup, motion } from 'motion/react'
+import { LayoutGroup } from 'motion/react'
 import React, { forwardRef, useId } from 'react'
 import { TouchTarget } from './button'
 import { Link } from './link'
@@ -97,22 +97,16 @@ export const SidebarItem = forwardRef(function SidebarItem(
     // Active
     'data-active:bg-zinc-950/5 data-active:*:data-[slot=icon]:fill-zinc-950',
     // Current
-    'data-current:*:data-[slot=icon]:fill-zinc-950',
+    'data-current:bg-reflex-500/10 data-current:font-semibold data-current:text-reflex-700 data-current:*:data-[slot=icon]:fill-reflex-700',
     // Dark mode
     'dark:text-white dark:*:data-[slot=icon]:fill-zinc-400',
     'dark:data-hover:bg-white/5 dark:data-hover:*:data-[slot=icon]:fill-white',
     'dark:data-active:bg-white/5 dark:data-active:*:data-[slot=icon]:fill-white',
-    'dark:data-current:*:data-[slot=icon]:fill-white'
+    'dark:data-current:bg-reflex-500/15 dark:data-current:text-reflex-500 dark:data-current:*:data-[slot=icon]:fill-reflex-500'
   )
 
   return (
     <span className={clsx(className, 'relative')}>
-      {current && (
-        <motion.span
-          layoutId="current-indicator"
-          className="absolute inset-y-2 -left-4 w-0.5 rounded-full bg-zinc-950 dark:bg-white"
-        />
-      )}
       {typeof props.href === 'string' ? (
         <Headless.CloseButton
           as={Link}

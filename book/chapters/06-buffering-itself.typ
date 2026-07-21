@@ -168,6 +168,6 @@ is the shape of a feedback loop that has found its rest, a thing that conditions
 itself to a stable state. We will not lean on the resemblance here. But the next
 chapter takes it up in earnest: the order this one set aside, the causal
 dependency cycles from the very first pages, and why a self-reflecting buffer
-that stabilizes itself is worth reading as a model of how a prediction and an
+that stabilizes itself is worth reading as a model of how an expectation and an
 explanation meet in a present. The still point, it turns out, has a physics. That
 is where we end.

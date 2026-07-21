@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { ChapterShell } from '@/components/site/chapter-shell'
 import { CodeCard } from '@/components/site/code-card'
-import { WidgetFrame } from '@/components/site/widget-frame'
-import { SettleWidget } from '@/components/site/widgets/settle'
 import { H2, Lead, P, Em, InlineCode } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Holding Itself Up' }
@@ -43,12 +41,6 @@ export default function Page() {
         idempotent, and buy safety by construction rather than by hoping the duplicate never arrives.
       </P>
 
-      <WidgetFrame
-        title="Safe to repeat?"
-        hint="Over an idempotent ground, consulting the context settles flat after one step and never moves again. Over one that compounds, every consult adds a level — the difference between a re-read you can trust and one you must count."
-      >
-        <SettleWidget />
-      </WidgetFrame>
     </ChapterShell>
   )
 }

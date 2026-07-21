@@ -1,5 +1,13 @@
 # Reflexads — book & Agda library
 
+![status: early concept](https://img.shields.io/badge/status-early%20concept-c98a3b)
+
+> [!NOTE]
+> **Early concept, under active development.** This is an exploratory framework,
+> not a finished or peer-reviewed result. The Agda keeps the reasoning
+> _consistent_, not _proven correct_. Expect gaps, revisions, and reframings —
+> feedback and discussion welcome.
+
 A book (written in [Typst](https://typst.app)) developed hand-in-hand with
 a machine-checked [Agda](https://agda.readthedocs.io) library. Each chapter
 is a pair: a prose file under `book/chapters/` and a companion module under
