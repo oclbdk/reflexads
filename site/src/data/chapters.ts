@@ -1,6 +1,8 @@
 // The book's progression, grouped by its internal arc. The sidebar, the
 // chapter chrome, and prev/next pagination are all driven from this list.
 
+import { introSections } from './intro-sections'
+
 export type Arc =
   | 'The Setup'
   | 'The Two Faces'
@@ -25,6 +27,11 @@ export interface Chapter {
   arc: Arc
   /** Which extracted Agda module the live code cards read from. */
   module: string
+  /**
+   * Predates the chapter 1 framing; kept as a placeholder until it is
+   * reworked to match. Flips off chapter by chapter as the rework lands.
+   */
+  legacy?: boolean
 }
 
 export const chapters: Chapter[] = [
@@ -32,7 +39,7 @@ export const chapters: Chapter[] = [
     number: 1,
     slug: 'introduction',
     title: 'Introduction',
-    tagline: 'Contextualized sequencing, and why it bends back on itself.',
+    tagline: 'From one button press to a system that steers itself.',
     arc: 'The Setup',
     module: 'Chapter01',
   },
@@ -43,6 +50,7 @@ export const chapters: Chapter[] = [
     tagline: 'The ground made concrete: a monoid a structure owns by accruing it.',
     arc: 'The Two Faces',
     module: 'Chapter02',
+    legacy: true,
   },
   {
     number: 3,
@@ -51,6 +59,7 @@ export const chapters: Chapter[] = [
     tagline: 'The hosting face: reading a ground rather than writing it.',
     arc: 'The Two Faces',
     module: 'Chapter03',
+    legacy: true,
   },
   {
     number: 4,
@@ -59,6 +68,7 @@ export const chapters: Chapter[] = [
     tagline: 'Self-hosting: settling flat in a single step, not in the limit.',
     arc: 'The Fixed Points',
     module: 'Chapter04',
+    legacy: true,
   },
   {
     number: 5,
@@ -67,6 +77,7 @@ export const chapters: Chapter[] = [
     tagline: 'Self-selection: the owning face pinned to one condition.',
     arc: 'The Fixed Points',
     module: 'Chapter05',
+    legacy: true,
   },
   {
     number: 6,
@@ -75,6 +86,7 @@ export const chapters: Chapter[] = [
     tagline: 'The split idempotent: both faces settle together. CRDTs, exactly.',
     arc: 'The Synthesis',
     module: 'Chapter06',
+    legacy: true,
   },
   {
     number: 7,
@@ -83,11 +95,20 @@ export const chapters: Chapter[] = [
     tagline: 'The flat space is an instruction stream. Code and prompts, one shape.',
     arc: 'The Reintroduction',
     module: 'Chapter07',
+    legacy: true,
   },
 ]
 
 export function chapterBySlug(slug: string): Chapter | undefined {
   return chapters.find((c) => c.slug === slug)
+}
+
+// The introduction has no page of its own — it opens directly on its first
+// section subpage. Every link to a chapter should resolve through this.
+export function chapterHref(slug: string): string {
+  return slug === 'introduction'
+    ? `/chapters/introduction/${introSections[0].slug}/`
+    : `/chapters/${slug}/`
 }
 
 export function chaptersByArc(): { arc: Arc; items: Chapter[] }[] {

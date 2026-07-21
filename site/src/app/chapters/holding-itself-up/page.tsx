@@ -10,7 +10,7 @@ export default function Page() {
     <ChapterShell slug="holding-itself-up">
       <Lead>
         Chapter 1 promised that some self-reference spirals and some holds itself up. Here is the
-        difference, made precise: a hosting face <Em>settles</Em> when growing a level and
+        difference, made precise: a hosting face <Em>settles</Em>{' '}when growing a level and
         regrounding it returns you exactly where you began — flat, in a single step.
       </Lead>
 
@@ -36,7 +36,7 @@ export default function Page() {
       <CodeCard module="Chapter04" tag="from-ground" caption="Self-hosting holds exactly when the ground is idempotent." />
 
       <P>
-        An idempotent ground is a ground of interactions <Em>safe to repeat</Em> — which is why, in
+        An idempotent ground is a ground of interactions <Em>safe to repeat</Em>{' '}— which is why, in
         any system where the same thing may happen twice, you reach for operations built to be
         idempotent, and buy safety by construction rather than by hoping the duplicate never arrives.
       </P>

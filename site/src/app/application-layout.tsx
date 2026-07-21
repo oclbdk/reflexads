@@ -14,7 +14,8 @@ import {
   SidebarSection,
 } from '@/components/sidebar'
 import { SidebarLayout } from '@/components/sidebar-layout'
-import { chapters } from '@/data/chapters'
+import { chapterHref, chapters } from '@/data/chapters'
+import { introSections } from '@/data/intro-sections'
 
 const GITHUB_URL = 'https://github.com/oclbdk/reflexads'
 
@@ -22,7 +23,7 @@ function StatusBadge() {
   return (
     <span className="inline-flex w-fit items-center gap-1.5 rounded-full bg-reflex-500/10 px-3 py-1.5 text-xs font-medium text-reflex-700 ring-1 ring-reflex-500/20 dark:text-reflex-500">
       <span className="size-1.5 rounded-full bg-reflex-500" />
-      under active development
+      under open development
     </span>
   )
 }
@@ -51,16 +52,35 @@ function AppSidebar({ pathname }: { pathname: string }) {
       <SidebarBody>
         <SidebarSection>
           {chapters.map((c) => (
-            <SidebarItem
-              key={c.slug}
-              href={`/chapters/${c.slug}/`}
-              current={pathname.startsWith(`/chapters/${c.slug}`)}
-            >
-              <SidebarLabel>
-                <span className="mr-2.5 tabular-nums text-zinc-500 dark:text-zinc-400">{c.number}</span>
-                {c.title}
-              </SidebarLabel>
-            </SidebarItem>
+            <div key={c.slug}>
+              <SidebarItem
+                href={chapterHref(c.slug)}
+                current={c.slug !== 'introduction' && pathname.startsWith(`/chapters/${c.slug}`)}
+              >
+                <SidebarLabel>
+                  <span className="mr-2.5 tabular-nums text-zinc-500 dark:text-zinc-400">{c.number}</span>
+                  {c.title}
+                </SidebarLabel>
+              </SidebarItem>
+              {c.slug === 'introduction' && (
+                <div className="ml-4 border-l border-zinc-950/5 pl-1 dark:border-white/10">
+                  {introSections.map((s, i) => (
+                    <SidebarItem
+                      key={s.slug}
+                      href={`/chapters/introduction/${s.slug}/`}
+                      current={pathname.startsWith(`/chapters/introduction/${s.slug}`)}
+                    >
+                      <SidebarLabel className="text-xs/5 sm:text-xs/5">
+                        <span className="mr-2 font-mono text-[10px] tabular-nums text-zinc-400 dark:text-zinc-500">
+                          1.{i + 1}
+                        </span>
+                        {s.title}
+                      </SidebarLabel>
+                    </SidebarItem>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </SidebarSection>
       </SidebarBody>

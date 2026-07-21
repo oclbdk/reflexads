@@ -1,22 +1,25 @@
 import Link from 'next/link'
 import { ArrowRightIcon } from '@heroicons/react/16/solid'
-import { chapters } from '@/data/chapters'
+import { chapterHref, chapters } from '@/data/chapters'
 
 export default function Home() {
   return (
     <div className="mx-auto max-w-3xl">
       <section className="border-b border-zinc-950/5 pb-12 dark:border-white/10">
         <h1 className="text-4xl/tight font-semibold tracking-tight text-zinc-950 sm:text-5xl/tight dark:text-white">
-          Structures that contextually host their own conditions
+          Designing AI Harnesses
         </h1>
-        <p className="mt-6 text-lg/8 text-zinc-600 dark:text-zinc-300">
+        <p className="mt-3 text-xl/8 font-medium text-zinc-600 dark:text-zinc-300">
+          Systems That Contextually Host Their Own Conditions
+        </p>
+        <p className="mt-4 text-base/7 text-zinc-500 dark:text-zinc-400">
           An interactive guide that explores how engineers can reason about looping effects in
           computational workflows, like AI contexts that feed code, prose, and data sources back
           into their own operations.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
-            href="/chapters/introduction/"
+            href={chapterHref('introduction')}
             className="inline-flex items-center gap-1.5 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-medium text-white hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
           >
             Start reading <ArrowRightIcon className="size-4" />
@@ -36,7 +39,7 @@ export default function Home() {
           {chapters.map((c) => (
             <li key={c.slug}>
               <Link
-                href={`/chapters/${c.slug}/`}
+                href={chapterHref(c.slug)}
                 className="group flex items-baseline gap-4 py-3 hover:bg-zinc-50 dark:hover:bg-white/5"
               >
                 <span className="w-6 shrink-0 text-right font-mono text-sm text-zinc-400 tabular-nums">
@@ -45,6 +48,11 @@ export default function Home() {
                 <span className="min-w-0">
                   <span className="font-medium text-zinc-950 group-hover:text-reflex-600 dark:text-white dark:group-hover:text-reflex-500">
                     {c.title}
+                    {c.legacy && (
+                      <span className="ml-2 rounded-full bg-amber-500/10 px-2 py-0.5 align-middle text-[10px] font-medium text-amber-700 ring-1 ring-amber-500/20 dark:text-amber-500">
+                        legacy
+                      </span>
+                    )}
                   </span>
                   <span className="block text-sm/6 text-zinc-500 dark:text-zinc-400">
                     {c.tagline}

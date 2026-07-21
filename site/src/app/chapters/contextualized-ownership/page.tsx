@@ -27,8 +27,8 @@ export default function Page() {
 
       <H2>The owning tower</H2>
       <P>
-        We give these structures our own names. A <Em>Reflad</Em> is a monad seen as something that{' '}
-        <Em>owns</Em>; a <Em>Ground</Em> wraps the monoid the same way; and a <Em>Reflexad</Em>{' '}
+        We give these structures our own names. A <Em>Reflad</Em>{' '}is a monad seen as something that{' '}
+        <Em>owns</Em>; a <Em>Ground</Em>{' '}wraps the monoid the same way; and a <Em>Reflexad</Em>{' '}
         stands a Reflad on a Ground it is parameterized by — every value paired with the ground
         accrued so far.
       </P>
@@ -49,7 +49,7 @@ export default function Page() {
         site, but concentrated once in the algebra of the ground, where everything built on it
         inherits them for free. Get the ground right and the coherence of all that stands on it is
         settled in one place. Nothing forces the ground to be <InlineCode>accumulated</InlineCode>,
-        though — a structure could <Em>read</Em> it instead of writing it, which is the next chapter.
+        though — a structure could <Em>read</Em>{' '}it instead of writing it, which is the next chapter.
       </P>
     </ChapterShell>
   )

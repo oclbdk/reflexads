@@ -16,7 +16,7 @@ export default function Page() {
 
       <H2>Instructions and prompts</H2>
       <P>
-        An instruction acts on a machine&rsquo;s state; a <Em>prompt</Em> acts on a model&rsquo;s
+        An instruction acts on a machine&rsquo;s state; a <Em>prompt</Em>{' '}acts on a model&rsquo;s
         context. Both are contextualized interactions over a ground; both compose into a program;
         both fold each result back in. One stream executed by silicon, the other by a model — the
         same shape underneath.

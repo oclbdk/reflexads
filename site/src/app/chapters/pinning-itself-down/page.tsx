@@ -10,7 +10,7 @@ export default function Page() {
     <ChapterShell slug="pinning-itself-down">
       <Lead>
         Self-hosting was not special to hosting. Reflect every arrow and the owning face has had a
-        dual property all along: <Em>self-selection</Em> — expand a value, collapse it back, and
+        dual property all along: <Em>self-selection</Em>{' '}— expand a value, collapse it back, and
         land exactly where you began.
       </Lead>
 
@@ -26,15 +26,15 @@ export default function Page() {
       <H2>One condition, two faces</H2>
       <P>
         And yet they hold at the same time. Each face settles, by its canonical witness, if and only
-        if the ground is idempotent — so the reading settles <Em>if and only if</Em> the writing
+        if the ground is idempotent — so the reading settles <Em>if and only if</Em>{' '}the writing
         does. They are one condition, read forward and read back.
       </P>
 
       <CodeCard module="Chapter05" tag="equivalence" caption="The Writer self-selects exactly when the ground is idempotent." />
 
       <P>
-        The price is specific. Idempotence forgets <Em>multiplicity</Em> — a multiset becomes a set
-        — while leaving order alone. So the self-properties are native to <Em>state</Em> and hostile
+        The price is specific. Idempotence forgets <Em>multiplicity</Em>{' '}— a multiset becomes a set
+        — while leaving order alone. So the self-properties are native to <Em>state</Em>{' '}and hostile
         to <Em>history</Em>. Ask whether your domain needs to <InlineCode>count</InlineCode>: if it
         only needs what is currently the case, model it as state and the idempotent merges, safe
         replays, and conflict-free convergence are yours. If it needs the tally, keep the log.

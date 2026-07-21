@@ -29,12 +29,7 @@ export function WidgetFrame({
   )
 }
 
-export function WidgetPlaceholder({ title, idea }: { title: string; idea: React.ReactNode }) {
-  return (
-    <WidgetFrame title={title} hint="Planned interactive — coming in a later pass.">
-      <div className="flex min-h-32 flex-col items-center justify-center gap-2 rounded-lg border border-dashed border-reflex-500/30 px-6 py-8 text-center">
-        <p className="text-sm/6 text-zinc-600 dark:text-zinc-400">{idea}</p>
-      </div>
-    </WidgetFrame>
-  )
+// Emphasis tuned for widget hint text (slightly stronger than prose Em).
+export function Em({ children }: { children: React.ReactNode }) {
+  return <em className="text-zinc-700 italic dark:text-zinc-200">{children}</em>
 }

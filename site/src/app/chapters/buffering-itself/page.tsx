@@ -9,9 +9,9 @@ export default function Page() {
   return (
     <ChapterShell slug="buffering-itself">
       <Lead>
-        Strip each face to the ground and it is a single move: the owning face <Em>combines</Em> two
-        stretches into one; the hosting face <Em>duplicates</Em> one into a pair. Compose them and
-        you get a <Em>split idempotent</Em> — a retract.
+        Strip each face to the ground and it is a single move: the owning face <Em>combines</Em>{' '}two
+        stretches into one; the hosting face <Em>duplicates</Em>{' '}one into a pair. Compose them and
+        you get a <Em>split idempotent</Em>{' '}— a retract.
       </Lead>
 
       <CodeCard module="Chapter06" tag="split" caption="buffer = copy ∘ merge, factoring through the flat ground." />
@@ -33,8 +33,8 @@ export default function Page() {
 
       <H2>CRDTs, exactly</H2>
       <P>
-        Read the halves as distributed operations: <InlineCode>copy</InlineCode> is replication,{' '}
-        <InlineCode>merge</InlineCode> is reconciliation. Then <InlineCode>merge ∘ copy = id</InlineCode>{' '}
+        Read the halves as distributed operations: <InlineCode>copy</InlineCode>{' '}is replication,{' '}
+        <InlineCode>merge</InlineCode>{' '}is reconciliation. Then <InlineCode>merge ∘ copy = id</InlineCode>{' '}
         — replicate a state and reconcile it back and nothing changes — is a conflict-free
         type&rsquo;s whole guarantee. To build one, you do not orchestrate the replicas; you make the
         merge reconcile onto a shared ground and make it idempotent. Convergence becomes a property
@@ -43,7 +43,7 @@ export default function Page() {
 
 
       <P>
-        One honest line of scope: a <Em>classic</Em> CRDT, where any schedule reaches the same
+        One honest line of scope: a <Em>classic</Em>{' '}CRDT, where any schedule reaches the same
         value, needs the band commutative. The general non-commutative band buffers just as safely
         against duplication but stays order-sensitive — a last-writer-wins register rather than a
         grow-only set. Idempotence buys duplicate-safety; commutativity on top buys
