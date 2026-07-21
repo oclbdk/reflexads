@@ -47,10 +47,9 @@ export const chapters: Chapter[] = [
     number: 2,
     slug: 'contextualized-ownership',
     title: 'Contextualized Ownership',
-    tagline: 'The ground made concrete: a monoid a structure owns by accruing it.',
+    tagline: "This site's repo, documented as its own AI Harness: one record, and the scopes that own it.",
     arc: 'The Two Faces',
     module: 'Chapter02',
-    legacy: true,
   },
   {
     number: 3,
