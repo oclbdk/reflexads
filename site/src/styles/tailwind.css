@@ -1,0 +1,19 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: var(--font-inter), Inter, ui-sans-serif, system-ui, sans-serif;
+  --font-sans--font-feature-settings: 'cv11';
+  --font-mono: var(--font-jbmono), 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Warm neutral surfaces — "ink & ground". Paper is the content panel, sand
+     the app background behind it. Dark mode stays on the cool zinc scale. */
+  --color-paper: oklch(0.995 0.004 75);
+  --color-sand: oklch(0.955 0.008 75);
+
+  /* The single brand accent: a muted clay, kept clear of the widgets' semantic
+     palette (emerald / amber / sky / violet / rose). Used for the mark, links,
+     and interactive chrome only. */
+  --color-reflex-50: oklch(0.965 0.012 60);
+  --color-reflex-500: oklch(0.58 0.082 48);
+  --color-reflex-600: oklch(0.5 0.085 46);
+}
