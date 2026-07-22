@@ -55,10 +55,9 @@ export const chapters: Chapter[] = [
     number: 3,
     slug: 'situated-on-shared-ground',
     title: 'Situated on Shared Ground',
-    tagline: 'The hosting face: reading a ground rather than writing it.',
+    tagline: "This site's instances, situated on the one record: the hosts that hold it out to be read.",
     arc: 'The Two Faces',
     module: 'Chapter03',
-    legacy: true,
   },
   {
     number: 4,
