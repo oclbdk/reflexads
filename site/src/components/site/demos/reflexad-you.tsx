@@ -12,7 +12,7 @@ import { Em, DemoFrame } from '../demo-frame'
 // The Role of You — the component architecture of the AI harness system this
 // documentation specifies, as a demo. Center: the artifact
 // (prose, code, data). Around it: the three roles that consume it. Attaching
-// a "YOU" token is the system's ownership model: it instantiates a reader at
+// a "YOU" tag is the system's ownership model: it instantiates a reader at
 // a role and traces that role's stream — its interactions with the artifact
 // and the propagation of its effects along the edges the role owns. The
 // technical point: the interaction web is asymmetric (units, clocks, media,
@@ -117,11 +117,11 @@ function DocNode({ data }: NodeProps) {
             </span>
           ))
         ) : (
-          <span className="font-mono text-[9px] text-zinc-300 dark:text-zinc-600">no “YOU” tokens attached</span>
+          <span className="font-mono text-[9px] text-zinc-300 dark:text-zinc-600">no “YOU” tags attached</span>
         )}
       </div>
       <div className="mt-1 text-[9px]/4 text-zinc-400 dark:text-zinc-500">
-        one artifact, {attached.length} “YOU” token{attached.length === 1 ? '' : 's'} attached —
+        one artifact, {attached.length} “YOU” tag{attached.length === 1 ? '' : 's'} attached —
         tracking those influences; the views commute: the source never changes, only the sequencing
       </div>
       <Handle id="toEng" type="source" position={Position.Left} className="!size-1.5 !border-0 !bg-zinc-300 dark:!bg-zinc-600" />
@@ -170,7 +170,7 @@ function RoleNode({ data }: NodeProps) {
           active ? meta.text : 'text-zinc-300 dark:text-zinc-600',
         )}
       >
-        {active ? `You := ${meta.title} · ${meta.bounds}` : 'untracked — attach a “YOU” token to track its influence'}
+        {active ? `You := ${meta.title} · ${meta.bounds}` : 'untracked — attach a “YOU” tag to track its influence'}
       </div>
       <Handle type="target" position={role === 'eng' ? Position.Right : role === 'llm' ? Position.Left : Position.Top} className="!size-1.5 !border-0 !bg-zinc-300 dark:!bg-zinc-600" />
       <Handle id="out" type="source" position={Position.Bottom} className="!size-1.5 !border-0 !bg-zinc-300 dark:!bg-zinc-600" />
@@ -242,14 +242,14 @@ function ReadingNode({ data }: NodeProps) {
         {units.length === 0 && (
           <span className="text-[10px] text-zinc-300 dark:text-zinc-600">
             {activeCount === 0
-              ? 'nothing tracked — attach a “YOU” token to a role'
+              ? 'nothing tracked — attach a “YOU” tag to a role'
               : 'scroll, press, read — the tracked influences land here, merged in time'}
           </span>
         )}
       </div>
       <div className="mt-2 border-t border-zinc-950/5 pt-1.5 font-mono text-[10px]/4 text-zinc-500 dark:border-white/10 dark:text-zinc-400">
         one sequence, merged in time; runs from one scope compress to ⋯×n so every thread stays
-        visible — detach a token and its thread leaves the braid; re-attach and it returns
+        visible — detach a tag and its thread leaves the braid; re-attach and it returns
       </div>
       <Handle id="in" type="target" position={Position.Top} className="!size-1.5 !border-0 !bg-zinc-300 dark:!bg-zinc-600" />
     </div>
@@ -322,7 +322,7 @@ export function ReflexadYouDemo() {
 
   // The application domain runs regardless of what is tracked: execution
   // replenishes it (the page never stops running), consumption drains it.
-  // Attaching YOU tokens observes influence; it does not power the domain.
+  // Attaching YOU tags observes influence; it does not power the domain.
   useEffect(() => {
     const keys: (keyof Econ)[] = ['a', 'b', 'g']
     const pulse = setInterval(() => {
@@ -552,7 +552,7 @@ export function ReflexadYouDemo() {
             domain plugs in).
           </span>
           <span className="mt-2 block">
-            Attaching a <Em>&ldquo;YOU&rdquo; token</Em>{' '}is the system&rsquo;s ownership model.
+            Attaching a <Em>&ldquo;YOU&rdquo; tag</Em>{' '}is the system&rsquo;s ownership model.
             It instantiates a reader at that role and traces that role&rsquo;s stream: every unit
             of its interaction with the artifact, plus the propagation of its effects along the
             edges the role owns (Engineer authors and directs, LLM expands, all three read). The
@@ -585,7 +585,7 @@ export function ReflexadYouDemo() {
       />
 
       <div className="mt-4 flex flex-wrap items-center gap-2" data-you-skip>
-        <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400">attach “YOU” tokens:</span>
+        <span className="font-mono text-xs text-zinc-500 dark:text-zinc-400">attach “YOU” tags:</span>
         {ROLE_KEYS.map((r) => (
           <button
             key={r}

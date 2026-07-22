@@ -130,11 +130,11 @@ export default function Page() {
       </P>
       <P>
         The dual of chapter 2&rsquo;s note: an instance never manufactures its own
-        &ldquo;YOU&rdquo; token. Its host generates one and transmits it with everything the
+        &ldquo;YOU&rdquo; tag. Its host generates one and transmits it with everything the
         instance does, with tracked provenance — the identity in a clone&rsquo;s config, the scoped
         token minted for a workflow run. The ground still records only its writers; hosts track
         what they issue. The two regimes meet at exactly one point: a write is where a transmitted
-        token becomes a persisted one.
+        tag becomes a persisted one.
       </P>
       <Stub>
         Re-situating on real history — the chapter 2 scrubber returns with its meaning inverted:

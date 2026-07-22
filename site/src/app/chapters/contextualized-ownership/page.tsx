@@ -134,7 +134,7 @@ export default function Page() {
         Serialization as an act. A commit picks a span of writes, names it, and assigns its owner.
       </P>
       <P>
-        A note worth carrying through the rest of this chapter: the &ldquo;YOU&rdquo; tokens are
+        A note worth carrying through the rest of this chapter: the &ldquo;YOU&rdquo; tags are
         not bookkeeping anyone does by hand. The system tags them automatically, alongside the
         content, in the same record — every span lands already wearing its owner, the way every op
         in chapter 1 carried its provenance. Ownership is never a side channel to reconcile
