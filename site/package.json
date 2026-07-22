@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/extract-agda.mjs",
+    "predev": "node scripts/extract-agda.mjs && node scripts/extract-git.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/extract-agda.mjs",
+    "prebuild": "node scripts/extract-agda.mjs && node scripts/extract-git.mjs",
     "build": "next build",
     "start": "next start",
-    "extract": "node scripts/extract-agda.mjs"
+    "extract": "node scripts/extract-agda.mjs && node scripts/extract-git.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.10",

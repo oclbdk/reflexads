@@ -1,14 +1,19 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ChapterShell } from '@/components/site/chapter-shell'
-import { H2, P } from '@/components/site/prose'
+import { H2, P, Unit } from '@/components/site/prose'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { RepoRecordDemo } from '@/components/site/demos/repo-record'
 
 export const metadata: Metadata = { title: 'Contextualized Ownership' }
 
 // Chapter 2 — this repository, documented as its own AI harness. Scaffold:
-// section stubs only, built out one widget at a time the way chapter 1 was.
-// The ground is the git record; the display surface is the rendered site;
-// refladic scopes layer the one into the other.
+// section stubs only, built out one demo at a time the way chapter 1 was.
+// The ground is the git record; the display surface is the rendered site.
+// The spine: each section shows a reflex the reader already performs in
+// version control — select a subsequence, consolidate it, feed it back —
+// unnamed until 2.7 generalizes the pattern and states its canonical
+// instance: learn from subsequences of commit history.
 
 const sections = [
   { id: 'the-ai-harness-repo', title: 'The AI Harness Repo' },
@@ -83,10 +88,14 @@ export default function Page() {
         The system chapter 1 described is running for real: this repository develops the site
         you&rsquo;re reading, and the page in front of you was derived from its record.
       </P>
-      <Stub>
-        The hook — the page&rsquo;s own provenance. The repo&rsquo;s actual history, with the two
-        hands from chapter 1 already on it.
-      </Stub>
+      <DemoBoundary>
+        <RepoRecordDemo />
+      </DemoBoundary>
+
+      <P>
+        That&rsquo;s the primal reflex: sampling your own past. Every demo in this chapter runs on
+        this record, and the rest of the chapter is the anatomy of how it gets written.
+      </P>
 
       <SectionHeading id="repo-as-shared-ground" />
       <P>
@@ -94,8 +103,8 @@ export default function Page() {
         and everything any of them ever did is reachable through it.
       </P>
       <Stub>
-        The record as the one shared object: scrub through real history and watch the site assemble
-        from empty to the page you&rsquo;re on.
+        Rewind as a reflex: replay a prefix of real history and watch the site rebuild from empty
+        to the page you&rsquo;re on. State is a fold, and the record suffices.
       </Stub>
 
       <SectionHeading id="ground-as-monoidal-persistence" />
@@ -104,18 +113,20 @@ export default function Page() {
         meaning, and nothing unhappens.
       </P>
       <Stub>
-        The laws, demonstrated where they bite: squash a real span and the fold is identical;
-        reorder it and the fold diverges; undoing turns out to append. The spec card lands here.
+        The laws as what licenses each reflex: squash a real span and the fold is identical
+        (regrouping is free); reorder it and the fold diverges (order is meaning); undoing turns
+        out to append (nothing unhappens). The spec card lands here.
       </Stub>
 
       <SectionHeading id="writing-files" />
       <P>
         Interactions at the finest grain: file writes landing in a working tree — the tangle
-        before anything is serialized.
+        before anything is serialized. Every write touches one of three strata:{' '}
+        <Unit kind="code" />, <Unit kind="prose" />, <Unit kind="data" />.
       </P>
       <Stub>
-        The working tree as chapter 1&rsquo;s tangle: concurrent, unordered, half-finished — and
-        not yet on the record.
+        The review reflex, <code className="font-mono text-xs">git diff</code>: sample what you
+        just did before deciding what to do next — the tangle observed before serialization.
       </Stub>
 
       <SectionHeading id="committing-revisions" />
@@ -130,8 +141,9 @@ export default function Page() {
         against; it persists with what it owns.
       </P>
       <Stub>
-        Committing made tangible: staging chooses the span, the message names it, the author field
-        attaches the token. Interleaved authors, one history.
+        The consolidation reflex every engineer already runs: a commit message is a subsequence
+        folded into prose that conditions future readers. Real subjects, shown beside the spans
+        they consolidate — interleaved authors, one history.
       </Stub>
 
       <SectionHeading id="publishing-releases" />
@@ -140,19 +152,20 @@ export default function Page() {
         the record is the truth.
       </P>
       <Stub>
-        The fold made public: the deploy pipeline as the consumer of the record, and this page as
-        the state it lands on. Nobody edits the deployed site.
+        The fold made public, twice: release notes (the span since last release, consolidated for
+        humans) and the deploy itself (the record, executed). Nobody edits the deployed site.
       </Stub>
 
       <SectionHeading id="the-refladic-form" />
       <P>
-        Every scope in this chapter repeated one shape: open with nothing accrued, accumulate under
-        an owner, resolve onto the shared record. That shape has a name to earn.
+        Every section in this chapter ran the same pattern: select a subsequence of the record,
+        consolidate it, feed it back. That pattern has a name to earn.
       </P>
       <Stub>
         The naming payoff, the way chapter 1 earned &ldquo;reflexad&rdquo;: own, accrue, resolve —
-        the reflad, standing on the ground the whole chapter has been walking on. Spec cards hold
-        us to it.
+        the reflad, the machinery that keeps a scope&rsquo;s spans extractable with their
+        ownership intact. And the canonical instance, stated plainly: learn from subsequences of
+        commit history — the harness-wide optimization reflex. Spec cards hold us to it.
       </Stub>
     </ChapterShell>
   )
