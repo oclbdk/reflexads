@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, ForwardIcon, PauseIcon, PlayIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // The Role of CPU — an instruction sequence streams opcodes, one at a time,
 // through the CPU and out into real-world effects. Registers and memory stay
@@ -145,9 +145,9 @@ const nodeTypes = {
   ioStub: IoStubNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function CpuRoleWidget() {
+export function CpuRoleDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
   const [running, setRunning] = useState(false)
 
@@ -220,7 +220,7 @@ export function CpuRoleWidget() {
   ]
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="From opcodes to a display"
       hint={
         <>
@@ -230,7 +230,7 @@ export function CpuRoleWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-80"
         nodes={nodes}
         edges={edges}
@@ -264,6 +264,6 @@ export function CpuRoleWidget() {
           {halted ? `halted · ${sim.pc} cycles` : `cycle ${sim.pc} · pc ${sim.pc}`}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

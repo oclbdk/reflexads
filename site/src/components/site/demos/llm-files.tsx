@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, PlayIcon, SparklesIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // Code and prose, from the same filesystem. smiley.asm executes as written —
 // the same ten opcodes, every run. smiley.txt is read by the LLM and
@@ -290,9 +290,9 @@ const nodeTypes = {
   filesDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function LlmFilesWidget() {
+export function LlmFilesDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // The route clock: code loads op by op; prose is read, then generated
@@ -495,7 +495,7 @@ export function LlmFilesWidget() {
           : 'interpreting'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Code and prose, one filesystem"
       hint={
         <>
@@ -509,7 +509,7 @@ export function LlmFilesWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-104"
         nodes={nodes}
         edges={edges}
@@ -542,6 +542,6 @@ export function LlmFilesWidget() {
           {statusLabel} · asm ×{sim.codeRuns} · txt ×{sim.proseRuns}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

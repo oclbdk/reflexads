@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, TrashIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // The filesystem now tracks application-level state: the pen color, stored in
 // cfg. Picking a swatch writes it (WR); every boot re-reads it (RD); drawing
@@ -316,9 +316,9 @@ const nodeTypes = {
   cfgDisplay: TouchDisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function CpuConfigWidget() {
+export function CpuConfigDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   const waiting = sim.pc === 1 && !sim.delivering
@@ -513,7 +513,7 @@ export function CpuConfigWidget() {
     'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-600 ring-1 ring-zinc-950/10 hover:bg-zinc-50 disabled:opacity-40 dark:text-zinc-300 dark:ring-white/10 dark:hover:bg-white/5'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Application state in the filesystem"
       hint={
         <>
@@ -527,7 +527,7 @@ export function CpuConfigWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-96"
         nodes={nodes}
         edges={edges}
@@ -547,6 +547,6 @@ export function CpuConfigWidget() {
           cycles
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

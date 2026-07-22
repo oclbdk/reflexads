@@ -21,7 +21,7 @@ import {
   ViewfinderCircleIcon,
 } from '@heroicons/react/16/solid'
 
-// The base every chapter's flow diagram sits on. In-prose diagrams are
+// The base every chapter's demo sits on. In-prose demos are
 // exhibits, not editors: the canvas must never hijack page scroll. On screens
 // too small to read a fitted diagram, the reader can zoom: pinch on touch,
 // the corner controls anywhere. Panning unlocks only once zoomed past the
@@ -30,7 +30,7 @@ import {
 // would otherwise swallow them.
 
 // The `fitView` prop only fires at init, before custom nodes have measured
-// their real sizes — so exhibits drifted off-center. Re-fit once nodes are
+// their real sizes — so demos drifted off-center. Re-fit once nodes are
 // measured, once more after fonts settle, and on every container resize.
 // Each fit records the zoom it lands on; that level is what panning and the
 // touch-action override are judged against.
@@ -70,7 +70,7 @@ function AutoFit({
 }
 
 // Unlocks canvas panning only while zoomed in past the fitted level. At rest
-// a drag should scroll the page, not shove the exhibit around.
+// a drag should scroll the page, not shove the demo around.
 function PanGovernor({
   fittedZoom,
   onPanChange,
@@ -117,7 +117,7 @@ function ViewControls({ padding }: { padding: number }) {
   )
 }
 
-export function FlowCanvas({
+export function DemoCanvas({
   className,
   children,
   ...props
@@ -126,7 +126,7 @@ export function FlowCanvas({
   const fittedZoom = useRef(1)
   const [panUnlocked, setPanUnlocked] = useState(false)
 
-  // Every widget defines nodeTypes at module level, so its identity only ever
+  // Every demo defines nodeTypes at module level, so its identity only ever
   // changes when HMR reloads the module. React Flow handles that by partially
   // remounting nodes against a stale store (error #002), which can leave most
   // of a diagram unrendered until a refresh. A changed identity instead keys a
@@ -149,7 +149,7 @@ export function FlowCanvas({
           // none takes back over so a finger drags the canvas instead.
           // Plain CSS class: Tailwind's arbitrary variants read `_` as a
           // space, which mangles `.react-flow__pane`.
-          !panUnlocked && 'flow-scroll-through',
+          !panUnlocked && 'demo-scroll-through',
         )}
       >
         <ReactFlow

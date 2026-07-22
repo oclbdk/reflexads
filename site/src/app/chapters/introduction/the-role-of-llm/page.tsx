@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { SectionShell } from '@/components/site/section-shell'
 import { P } from '@/components/site/prose'
-import { WidgetBoundary } from '@/components/site/widget-boundary'
-import { LlmMapWidget } from '@/components/site/flow/llm-map'
-import { LlmChatWidget } from '@/components/site/flow/llm-chat'
-import { LlmFilesWidget } from '@/components/site/flow/llm-files'
-import { LlmExternalWidget } from '@/components/site/flow/llm-external'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { LlmMapDemo } from '@/components/site/demos/llm-map'
+import { LlmChatDemo } from '@/components/site/demos/llm-chat'
+import { LlmFilesDemo } from '@/components/site/demos/llm-files'
+import { LlmExternalDemo } from '@/components/site/demos/llm-external'
 
 export const metadata: Metadata = { title: 'The Role of LLM' }
 
@@ -17,27 +17,27 @@ export default function Page() {
         a whole span of opcodes below. Two streams, two clocks, one mapping between them:
       </P>
 
-      <WidgetBoundary>
-        <LlmMapWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <LlmMapDemo />
+      </DemoBoundary>
 
       <P>Conversation is the same mapping run both ways:</P>
 
-      <WidgetBoundary>
-        <LlmChatWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <LlmChatDemo />
+      </DemoBoundary>
 
       <P>Code and prose turn out to be two ways of authoring the same stream, with very different guarantees:</P>
 
-      <WidgetBoundary>
-        <LlmFilesWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <LlmFilesDemo />
+      </DemoBoundary>
 
       <P>And they read the outside world differently, too:</P>
 
-      <WidgetBoundary>
-        <LlmExternalWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <LlmExternalDemo />
+      </DemoBoundary>
     </SectionShell>
   )
 }

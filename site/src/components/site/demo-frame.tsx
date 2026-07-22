@@ -1,9 +1,9 @@
 import { BeakerIcon } from '@heroicons/react/16/solid'
 
-// The frame every interactive sits in: a labeled, visually distinct card so the
+// The frame every demo sits in: a labeled, visually distinct card so the
 // "you can touch this" moments read differently from prose and code.
 
-export function WidgetFrame({
+export function DemoFrame({
   title,
   hint,
   children,
@@ -17,7 +17,7 @@ export function WidgetFrame({
       <div className="flex items-center gap-2 border-b border-reflex-500/15 px-4 py-2.5">
         <BeakerIcon className="size-4 text-reflex-600 dark:text-reflex-500" />
         <span className="text-sm/6 font-semibold text-reflex-600 dark:text-reflex-500">{title}</span>
-        <span className="ml-auto text-xs/5 text-zinc-500 dark:text-zinc-400">interactive</span>
+        <span className="ml-auto text-xs/5 text-zinc-500 dark:text-zinc-400">demo</span>
       </div>
       <div className="px-4 py-5 sm:px-6 sm:py-6">{children}</div>
       {hint && (
@@ -29,7 +29,7 @@ export function WidgetFrame({
   )
 }
 
-// Emphasis tuned for widget hint text (slightly stronger than prose Em).
+// Emphasis tuned for demo hint text (slightly stronger than prose Em).
 export function Em({ children }: { children: React.ReactNode }) {
   return <em className="text-zinc-700 italic dark:text-zinc-200">{children}</em>
 }

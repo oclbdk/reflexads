@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, BoltIcon, CheckIcon, PlayIcon, XMarkIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { Em, WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { Em, DemoFrame } from '../demo-frame'
 
 // The Reflexadic Form, finale — and the reader is the reflexive control.
 // Press Reflex mid-session: everything pauses while you sample a span of the
@@ -394,9 +394,9 @@ const nodeTypes = {
   foldDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function ReflexadFoldWidget() {
+export function ReflexadFoldDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
   const [mode, setMode] = useState<'live' | 'selecting'>('live')
   const [selStart, setSelStart] = useState<number | null>(null)
@@ -800,7 +800,7 @@ export function ReflexadFoldWidget() {
   )
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="The reflex: your hands on the loop"
       hint={
         <>
@@ -821,7 +821,7 @@ export function ReflexadFoldWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-140"
         nodes={nodes}
         edges={edges}
@@ -865,6 +865,6 @@ export function ReflexadFoldWidget() {
           {sim.repeats}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

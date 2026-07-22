@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, ArrowsUpDownIcon, PlayIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // The Reflexadic Form, flagship. Three loops with the same three parts — a
 // unit, a step that runs inside accumulated context, and the fold back into
@@ -298,9 +298,9 @@ const nodeTypes = {
   shapeDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function ReflexadShapeWidget() {
+export function ReflexadShapeDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
   const [abstract, setAbstract] = useState(false)
   const [selected, setSelected] = useState<number | null>(null)
@@ -494,7 +494,7 @@ export function ReflexadShapeWidget() {
   ]
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="One shape, three scales"
       hint={
         <>
@@ -511,7 +511,7 @@ export function ReflexadShapeWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-140"
         nodes={nodes}
         edges={edges}
@@ -543,6 +543,6 @@ export function ReflexadShapeWidget() {
           {counts.eng} d · {counts.llm} t · {counts.cpu} op
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

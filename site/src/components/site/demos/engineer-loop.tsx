@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, PlayIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { Em, WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { Em, DemoFrame } from '../demo-frame'
 
 // The Role of Engineer, first flow. The slowest stream of all: decisions, one
 // at a time, each expanding into LLM and CPU flows at faster clocks. And the
@@ -315,9 +315,9 @@ const nodeTypes = {
   engDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function EngineerLoopWidget() {
+export function EngineerLoopDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // Phase driver: each decision expands at its own cadence.
@@ -524,7 +524,7 @@ export function EngineerLoopWidget() {
                 : 'working'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="One decision, many streams"
       hint={
         <>
@@ -537,7 +537,7 @@ export function EngineerLoopWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-108"
         nodes={nodes}
         edges={edges}
@@ -564,6 +564,6 @@ export function EngineerLoopWidget() {
           {sim.opsCount} opcodes
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

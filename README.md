@@ -38,7 +38,7 @@ The book and the site differ in register and in currency:
 - **The site** is where the framing is actively evolving. Its
   [chapter 1](https://oclbdk.github.io/reflexads/chapters/introduction/the-ai-harness-system/)
   is a standalone interactive short book on the **AI harness system**: seven
-  sections of live diagrams that build from a single button press up to a
+  sections of demos that build from a single button press up to a
   precise ownership model of how a harness's interactions influence its own
   later behavior. The site's remaining chapters are legacy placeholders from
   the book's framing, marked as such on the page, and are being reworked one
@@ -75,7 +75,7 @@ book/
 site/
   scripts/extract-agda.mjs  pulls the tagged Agda regions into src/generated/
   src/app/                  Next.js pages; chapter 1 lives on section subpages
-  src/components/site/flow/ the interactive widget library (@xyflow/react)
+  src/components/site/demos/  the demo library (@xyflow/react)
   src/data/chapters.ts      chapter progression; legacy flags live here
 Makefile                    check / book / watch / clean
 .github/workflows/          deploys the site to GitHub Pages on push to main

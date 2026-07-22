@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { SectionShell } from '@/components/site/section-shell'
 import { P } from '@/components/site/prose'
-import { WidgetBoundary } from '@/components/site/widget-boundary'
-import { HookTangleWidget } from '@/components/site/flow/hook-tangle'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { HookTangleDemo } from '@/components/site/demos/hook-tangle'
 
 export const metadata: Metadata = { title: 'Interactions as Sequences' }
 
@@ -15,9 +15,9 @@ export default function Page() {
         of those runs at its own pace. All of it gets serialized into one record:
       </P>
 
-      <WidgetBoundary>
-        <HookTangleWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <HookTangleDemo />
+      </DemoBoundary>
 
       <P>
         A few quick presses and you have hundreds of units, badly interleaved: effects of the

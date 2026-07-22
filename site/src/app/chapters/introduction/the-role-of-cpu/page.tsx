@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { SectionShell } from '@/components/site/section-shell'
 import { P } from '@/components/site/prose'
-import { WidgetBoundary } from '@/components/site/widget-boundary'
-import { CpuRoleWidget } from '@/components/site/flow/cpu-role'
-import { CpuLoopWidget } from '@/components/site/flow/cpu-loop'
-import { CpuSystemWidget } from '@/components/site/flow/cpu-system'
-import { CpuConfigWidget } from '@/components/site/flow/cpu-config'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { CpuRoleDemo } from '@/components/site/demos/cpu-role'
+import { CpuLoopDemo } from '@/components/site/demos/cpu-loop'
+import { CpuSystemDemo } from '@/components/site/demos/cpu-system'
+import { CpuConfigDemo } from '@/components/site/demos/cpu-config'
 
 export const metadata: Metadata = { title: 'The Role of CPU' }
 
@@ -18,27 +18,27 @@ export default function Page() {
         is a display:
       </P>
 
-      <WidgetBoundary>
-        <CpuRoleWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <CpuRoleDemo />
+      </DemoBoundary>
 
       <P>Input doesn&rsquo;t get to skip the stream. It has to enter it, on the stream&rsquo;s own schedule:</P>
 
-      <WidgetBoundary>
-        <CpuLoopWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <CpuLoopDemo />
+      </DemoBoundary>
 
       <P>Parallel hardware and persistent storage go through it too:</P>
 
-      <WidgetBoundary>
-        <CpuSystemWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <CpuSystemDemo />
+      </DemoBoundary>
 
       <P>Even application state lives behind it, and can steer the whole loop:</P>
 
-      <WidgetBoundary>
-        <CpuConfigWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <CpuConfigDemo />
+      </DemoBoundary>
     </SectionShell>
   )
 }

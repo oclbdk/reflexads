@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, PencilIcon, PlayIcon, TrashIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // The Role of Engineer, third flow. One mechanism, laid bare: the model's
 // outputs land where its next inputs come from. Each run reads notes.txt —
@@ -309,9 +309,9 @@ const nodeTypes = {
   steerDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function EngineerSteerWidget() {
+export function EngineerSteerDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // The run: read the notes, then generate — face tokens, then (if the loop
@@ -503,7 +503,7 @@ export function EngineerSteerWidget() {
     'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-600 ring-1 ring-zinc-950/10 hover:bg-zinc-50 disabled:opacity-40 dark:text-zinc-300 dark:ring-white/10 dark:hover:bg-white/5'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Outputs that shape the next outputs"
       hint={
         <>
@@ -516,7 +516,7 @@ export function EngineerSteerWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-112"
         nodes={nodes}
         edges={edges}
@@ -548,6 +548,6 @@ export function EngineerSteerWidget() {
           {sim.runs} runs · {sim.notes.length} notes
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

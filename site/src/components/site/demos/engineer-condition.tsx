@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, PencilIcon, PlayIcon, SparklesIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // The Role of Engineer, final flow. Three sources condition every run: the
 // brief (prose — what to draw), the notes (data — what came before), and the
@@ -432,9 +432,9 @@ const nodeTypes = {
   cndDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function EngineerConditionWidget() {
+export function EngineerConditionDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // Run and edit routes share the token machinery (and the LLM). A run's last
@@ -792,7 +792,7 @@ export function EngineerConditionWidget() {
     'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-600 ring-1 ring-zinc-950/10 hover:bg-zinc-50 disabled:opacity-40 dark:text-zinc-300 dark:ring-white/10 dark:hover:bg-white/5'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Two hands, one stream"
       hint={
         <>
@@ -816,7 +816,7 @@ export function EngineerConditionWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-120"
         nodes={nodes}
         edges={edges}
@@ -874,6 +874,6 @@ export function EngineerConditionWidget() {
           {sim.runs} runs · {sim.notes.length} notes
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

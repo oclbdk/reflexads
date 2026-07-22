@@ -10,7 +10,7 @@ book's framing (flagged in `src/data/chapters.ts`), reworked incrementally.
 
 - **Next.js 16** static export (`output: 'export'`, `basePath: /reflexads`)
 - **Tailwind CSS v4** + the **Catalyst** UI kit (components under `src/components/`)
-- **@xyflow/react** for the interactive diagrams
+- **@xyflow/react** for the demos
 - **Inter** self-hosted via `next/font` · **Heroicons** · **Motion**
 
 ## Live Agda
@@ -27,12 +27,12 @@ it. Editing an Agda source updates both the PDF and this site from one source.
 - `src/data/intro-sections.ts` — chapter 1's seven sections (1.1–1.7), one
   subpage each under `src/app/chapters/introduction/<section-slug>/`.
 - `src/app/chapters/<slug>/page.tsx` — one page per legacy chapter.
-- `src/components/site/flow/` — the interactive widget library: 20 xyflow
-  widgets on a shared `FlowCanvas`, one file per widget.
-- `src/components/site/` — prose primitives, code cards, widget frames and
+- `src/components/site/demos/` — the demo library: 20 xyflow
+  demos on a shared `DemoCanvas`, one file per demo.
+- `src/components/site/` — prose primitives, code cards, demo frames and
   error boundaries, the section shell, and the session recorder
   (`you-recorder.tsx` + `src/lib/you-stream.ts`: in-memory only, feeds the
-  Role of You widget across chapter 1's subpages).
+  Role of You demo across chapter 1's subpages).
 
 ## Develop
 

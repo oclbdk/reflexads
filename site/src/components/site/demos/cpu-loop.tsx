@@ -5,10 +5,10 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
-// Extends the CPU widget: the display is now a touch surface, and the program
+// Extends the CPU demo: the display is now a touch surface, and the program
 // is a real event loop. WFI blocks until input arrives; a click travels through
 // the touch controller into the CPU registers as coordinates; TGL consumes the
 // registers; JMP loops back to WFI. Drawing is blocked until the program is
@@ -201,9 +201,9 @@ const nodeTypes = {
   loopDisplay: TouchDisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function CpuLoopWidget() {
+export function CpuLoopDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   const waiting = sim.pc === 1 && !sim.delivering
@@ -334,7 +334,7 @@ export function CpuLoopWidget() {
   ]
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Drawing data back into the stream"
       hint={
         <>
@@ -348,7 +348,7 @@ export function CpuLoopWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-88"
         nodes={nodes}
         edges={edges}
@@ -368,6 +368,6 @@ export function CpuLoopWidget() {
           cycles
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

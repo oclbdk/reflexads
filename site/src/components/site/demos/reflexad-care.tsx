@@ -5,9 +5,9 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, PlayIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
+import { DemoCanvas } from './demo-canvas'
 import { Unit } from '../prose'
-import { Em, WidgetFrame } from '../widget-frame'
+import { Em, DemoFrame } from '../demo-frame'
 
 // REFLEXAD your digital pet — the care stack as a continuous game, with the
 // site's own trinity as its economy. The pet bridges both systems on its own;
@@ -494,9 +494,9 @@ const nodeTypes = {
   careSupplies: SuppliesNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function ReflexadCareWidget() {
+export function ReflexadCareDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // The pet naps while the tab is hidden: no timers run in the background, so
@@ -872,7 +872,7 @@ export function ReflexadCareWidget() {
     'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-600 ring-1 ring-zinc-950/10 hover:bg-zinc-50 disabled:opacity-40 dark:text-zinc-300 dark:ring-white/10 dark:hover:bg-white/5'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Reflexad: your digital pet"
       hint={
         <>
@@ -894,7 +894,7 @@ export function ReflexadCareWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-152"
         nodes={nodes}
         edges={edges}
@@ -929,6 +929,6 @@ export function ReflexadCareWidget() {
           gallery {coverage}/6 · exhibitions {sim.galleries} · dupes {sim.dupes} · {mood}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

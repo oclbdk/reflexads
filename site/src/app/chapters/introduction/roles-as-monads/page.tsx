@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { SectionShell } from '@/components/site/section-shell'
 import { CodeCard } from '@/components/site/code-card'
 import { P, Em, Term } from '@/components/site/prose'
-import { WidgetBoundary } from '@/components/site/widget-boundary'
-import { HookMonadWidget } from '@/components/site/flow/hook-monad'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { HookMonadDemo } from '@/components/site/demos/hook-monad'
 
 export const metadata: Metadata = { title: 'Roles as Monads' }
 
@@ -17,9 +17,9 @@ export default function Page() {
         what it buys:
       </P>
 
-      <WidgetBoundary>
-        <HookMonadWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <HookMonadDemo />
+      </DemoBoundary>
 
       <P>
         Each view replays cleanly. Every unit lands in whatever context the earlier units built,

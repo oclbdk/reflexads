@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { SectionShell } from '@/components/site/section-shell'
 import { CodeCard } from '@/components/site/code-card'
 import { P, Term } from '@/components/site/prose'
-import { WidgetBoundary } from '@/components/site/widget-boundary'
-import { ReflexadShapeWidget } from '@/components/site/flow/reflexad-shape'
-import { ReflexadFoldWidget } from '@/components/site/flow/reflexad-fold'
-import { ReflexadPairWidget } from '@/components/site/flow/reflexad-pair'
-import { ReflexadCareWidget } from '@/components/site/flow/reflexad-care'
-import { ReflexadYouWidget } from '@/components/site/flow/reflexad-you'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { ReflexadShapeDemo } from '@/components/site/demos/reflexad-shape'
+import { ReflexadFoldDemo } from '@/components/site/demos/reflexad-fold'
+import { ReflexadPairDemo } from '@/components/site/demos/reflexad-pair'
+import { ReflexadCareDemo } from '@/components/site/demos/reflexad-care'
+import { ReflexadYouDemo } from '@/components/site/demos/reflexad-you'
 
 export const metadata: Metadata = { title: 'The Reflexadic Form' }
 
@@ -20,36 +20,36 @@ export default function Page() {
         scales, braided into one sequence:
       </P>
 
-      <WidgetBoundary>
-        <ReflexadShapeWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <ReflexadShapeDemo />
+      </DemoBoundary>
 
       <P>
         A monad only ever extends. The <Term>reflex</Term>{' '}is the move it&rsquo;s missing, and
         here it&rsquo;s in your hands:
       </P>
 
-      <WidgetBoundary>
-        <ReflexadFoldWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <ReflexadFoldDemo />
+      </DemoBoundary>
 
       <P>Two systems that can&rsquo;t see each other get exactly one bridge, and it&rsquo;s the reflexive controller:</P>
 
-      <WidgetBoundary>
-        <ReflexadPairWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <ReflexadPairDemo />
+      </DemoBoundary>
 
       <P>A controller is itself a system, though, with loops of its own to keep alive:</P>
 
-      <WidgetBoundary>
-        <ReflexadCareWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <ReflexadCareDemo />
+      </DemoBoundary>
 
       <P>And the widest instance of the shape is the one happening right now:</P>
 
-      <WidgetBoundary>
-        <ReflexadYouWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <ReflexadYouDemo />
+      </DemoBoundary>
 
       <P>
         So here&rsquo;s the ownership model, stated as plainly as we can. Every interaction

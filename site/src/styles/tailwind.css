@@ -10,7 +10,7 @@
   --color-paper: oklch(0.995 0.004 75);
   --color-sand: oklch(0.955 0.008 75);
 
-  /* The single brand accent: a muted clay, kept clear of the widgets' semantic
+  /* The single brand accent: a muted clay, kept clear of the demos' semantic
      palette (emerald / amber / sky / violet / rose). Used for the mark, links,
      and interactive chrome only. */
   --color-reflex-50: oklch(0.965 0.012 60);
@@ -19,10 +19,10 @@
   --color-reflex-700: oklch(0.42 0.078 44);
 }
 
-/* Flow canvases are exhibits: while a canvas sits at its fitted zoom, a
+/* Demo canvases are exhibits, not editors: while one sits at its fitted zoom, a
    one-finger swipe must scroll the page, not get eaten by xyflow's
-   touch-action: none. FlowCanvas puts this class on the wrapper at rest and
+   touch-action: none. DemoCanvas puts this class on the wrapper at rest and
    removes it once the reader zooms in (then a finger pans the canvas). */
-.flow-scroll-through .react-flow__pane {
+.demo-scroll-through .react-flow__pane {
   touch-action: pan-y;
 }

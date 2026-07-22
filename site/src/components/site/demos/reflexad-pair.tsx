@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, BoltIcon, CheckIcon, PlayIcon, XMarkIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { Em, WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { Em, DemoFrame } from '../demo-frame'
 
 // Two reflexad stacks, one reflexive controller — you, in the center. The
 // systems share a brief and a repertoire but cannot see each other: left
@@ -338,9 +338,9 @@ const nodeTypes = {
   pairDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function ReflexadPairWidget() {
+export function ReflexadPairDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
   const [mode, setMode] = useState<'live' | 'selecting'>('live')
   const [selSys, setSelSys] = useState<SysKey | null>(null)
@@ -793,7 +793,7 @@ export function ReflexadPairWidget() {
     'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-600 ring-1 ring-zinc-950/10 hover:bg-zinc-50 disabled:opacity-40 dark:text-zinc-300 dark:ring-white/10 dark:hover:bg-white/5'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Two systems, one controller"
       hint={
         <>
@@ -815,7 +815,7 @@ export function ReflexadPairWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-140"
         nodes={nodes}
         edges={edges}
@@ -878,6 +878,6 @@ export function ReflexadPairWidget() {
           coverage {coverage}/4 · duplicates {duplicates}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

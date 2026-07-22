@@ -5,9 +5,9 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, SparklesIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
+import { DemoCanvas } from './demo-canvas'
 import { Unit } from '../prose'
-import { WidgetFrame } from '../widget-frame'
+import { DemoFrame } from '../demo-frame'
 
 // The Role of Engineer, second flow — mechanism, not workflow. The engineer's
 // lever is where to orient attention: code, prose, a data source, or the model
@@ -490,9 +490,9 @@ const nodeTypes = {
   oriDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function EngineerOrientWidget() {
+export function EngineerOrientDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // Code route: a fast, exact burst — one op per beat, straight in.
@@ -844,7 +844,7 @@ export function EngineerOrientWidget() {
     'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-600 ring-1 ring-zinc-950/10 hover:bg-zinc-50 disabled:opacity-40 dark:text-zinc-300 dark:ring-white/10 dark:hover:bg-white/5'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Four orientations, one stream"
       hint={
         <>
@@ -859,7 +859,7 @@ export function EngineerOrientWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-120"
         nodes={nodes}
         edges={edges}
@@ -896,6 +896,6 @@ export function EngineerOrientWidget() {
           {sim.ops.length} ops = {counts.asm} asm · {counts.tok} tok · {counts.dat} dat
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

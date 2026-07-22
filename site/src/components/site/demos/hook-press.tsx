@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { clsx } from 'clsx'
-import { WidgetFrame } from '../widget-frame'
+import { DemoFrame } from '../demo-frame'
 
-// The chapter's hook, and deliberately the smallest widget on the page: one
+// The chapter's hook, and deliberately the smallest demo on the page: one
 // button, one display. Each press lights the next pixel — a stream, one unit
 // at a time, filling the legible surface. The button is labeled "the first
 // press" so that the reader can find this exact act again in §7's trace,
@@ -12,18 +12,18 @@ import { WidgetFrame } from '../widget-frame'
 
 const GRID = 8
 
-export function HookPressWidget() {
+export function HookPressDemo() {
   const [count, setCount] = useState(0)
 
   const litCount = count === 0 ? 0 : ((count - 1) % (GRID * GRID)) + 1
   const last = count > 0 ? (count - 1) % (GRID * GRID) : null
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="The press"
       hint={
         <>
-          That&rsquo;s the whole widget. The rest of this chapter is the anatomy of what you just did.
+          That&rsquo;s the whole demo. The rest of this chapter is the anatomy of what you just did.
         </>
       }
     >
@@ -60,6 +60,6 @@ export function HookPressWidget() {
           )}
         </div>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

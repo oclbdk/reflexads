@@ -11,8 +11,8 @@ import {
   FaceSmileIcon,
   PowerIcon,
 } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // Extends the CPU system with a GPU (parallel, volatile VRAM) and a filesystem
 // (persistent, survives power-off). The CPU draws serially, one pixel per
@@ -204,9 +204,9 @@ const nodeTypes = {
   sysDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function CpuSystemWidget() {
+export function CpuSystemDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   const busy = sim.pc < sim.ops.length
@@ -338,7 +338,7 @@ export function CpuSystemWidget() {
     'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm text-zinc-600 ring-1 ring-zinc-950/10 hover:bg-zinc-50 disabled:opacity-40 dark:text-zinc-300 dark:ring-white/10 dark:hover:bg-white/5'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Persistent and parallel — one stream"
       hint={
         <>
@@ -350,7 +350,7 @@ export function CpuSystemWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-88"
         nodes={nodes}
         edges={edges}
@@ -387,6 +387,6 @@ export function CpuSystemWidget() {
           {queued > 0 ? `${queued} queued` : 'idle'} · {sim.cycles} cycles
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

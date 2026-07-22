@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon } from '@heroicons/react/16/solid'
-import { WidgetFrame } from '../widget-frame'
+import { DemoFrame } from '../demo-frame'
 
 // The straightening: take the tangled record and project it, one role at a
 // time. Each view replays in its own order into its own state — nothing
 // outside the view is needed, down to recovering the request still in
 // flight. We don't argue for the word "monad"; the views speak, and the
-// spec below the widget is what holds us accountable for what it means.
+// spec below the demo is what holds us accountable for what it means.
 
 type StreamKey = 'input' | 'state' | 'ui' | 'net' | 'timer' | 'sys'
 type Entry = { stream: StreamKey; label: string; p: number | null; t: number }
@@ -92,7 +92,7 @@ function fold(role: StreamKey, played: Entry[]): string[] {
   }
 }
 
-export function HookMonadWidget() {
+export function HookMonadDemo() {
   const [log, setLog] = useState<Entry[]>([])
   const [role, setRole] = useState<StreamKey | null>(null)
   const [replay, setReplay] = useState(0)
@@ -120,7 +120,7 @@ export function HookMonadWidget() {
   const lines = role ? fold(role, played) : []
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Straightening the record"
       hint={
         <>
@@ -222,6 +222,6 @@ export function HookMonadWidget() {
           {role ? ` · view ${role}: ${view.length} units → ${lines.length} lines of state` : ''}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

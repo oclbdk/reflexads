@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon } from '@heroicons/react/16/solid'
-import { WidgetFrame } from '../widget-frame'
+import { DemoFrame } from '../demo-frame'
 
 // The tangle: §1's single pixel was the surface. One press fans out across
 // many concurrent streams — input, state, rendering, network, timers — each
@@ -29,7 +29,7 @@ const STREAM_KEYS = Object.keys(STREAMS) as StreamKey[]
 const STORE_MAX = 900
 const RENDER_MAX = 360
 
-export function HookTangleWidget() {
+export function HookTangleDemo() {
   const [log, setLog] = useState<Entry[]>([])
   const [presses, setPresses] = useState(0)
   const [selected, setSelected] = useState<number | null>(null)
@@ -131,7 +131,7 @@ export function HookTangleWidget() {
   }
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="What the press actually did"
       hint={
         <>
@@ -209,6 +209,6 @@ export function HookTangleWidget() {
           {presses > 0 ? ` · ≈${Math.round(log.length / presses)}× each` : ''}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

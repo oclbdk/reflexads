@@ -6,7 +6,7 @@ import { H2, P } from '@/components/site/prose'
 export const metadata: Metadata = { title: 'Situated on Shared Ground' }
 
 // Chapter 3 — the many situated instances of this site's repo. Scaffold:
-// section stubs only, built out one widget at a time and reworked as we go.
+// section stubs only, built out one demo at a time and reworked as we go.
 // Chapter 2 documented the one record and the scopes that write it; this
 // chapter documents the hosts that hold it out to be read.
 

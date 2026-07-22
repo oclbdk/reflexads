@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, SparklesIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // The Role of LLM, first flow. All machinery abstracted to CPU and display;
 // what is new is the second stream. The LLM emits tokens at its own clock —
@@ -226,9 +226,9 @@ const nodeTypes = {
   mapDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function LlmMapWidget() {
+export function LlmMapDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   const cpuBusy = !sim.halted && sim.pc < sim.ops.length
@@ -347,7 +347,7 @@ export function LlmMapWidget() {
   const done = !sim.generating && sim.tIdx === TOKENS.length && !cpuBusy
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="One token, many opcodes"
       hint={
         <>
@@ -359,7 +359,7 @@ export function LlmMapWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-112"
         nodes={nodes}
         edges={edges}
@@ -386,6 +386,6 @@ export function LlmMapWidget() {
           {done ? ' · halted' : ''}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

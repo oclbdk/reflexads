@@ -5,12 +5,12 @@ import { loadStream, type YouEvent } from '@/lib/you-stream'
 import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
-import { FlowCanvas } from './flow-canvas'
+import { DemoCanvas } from './demo-canvas'
 import { Unit } from '../prose'
-import { Em, WidgetFrame } from '../widget-frame'
+import { Em, DemoFrame } from '../demo-frame'
 
 // The Role of You — the component architecture of the AI harness system this
-// documentation specifies, as an interactive diagram. Center: the artifact
+// documentation specifies, as a demo. Center: the artifact
 // (prose, code, data). Around it: the three roles that consume it. Attaching
 // a "YOU" token is the system's ownership model: it instantiates a reader at
 // a role and traces that role's stream — its interactions with the artifact
@@ -308,9 +308,9 @@ const nodeTypes = {
   youDomain: DomainNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function ReflexadYouWidget() {
+export function ReflexadYouDemo() {
   const [active, setActive] = useState<Record<RoleKey, boolean>>({ eng: true, llm: false, cpu: false })
   const [engUnits, setEngUnits] = useState<ReadUnit[]>([])
   const [cpuUnits, setCpuUnits] = useState<ReadUnit[]>([])
@@ -538,7 +538,7 @@ export function ReflexadYouWidget() {
   ]
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="The Role of You"
       hint={
         <>
@@ -576,7 +576,7 @@ export function ReflexadYouWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-160"
         nodes={nodes}
         edges={edges}
@@ -606,6 +606,6 @@ export function ReflexadYouWidget() {
           {braided.length} units
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

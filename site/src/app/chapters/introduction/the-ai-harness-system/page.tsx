@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { SectionShell } from '@/components/site/section-shell'
 import { P, Em, Term } from '@/components/site/prose'
-import { WidgetBoundary } from '@/components/site/widget-boundary'
-import { HookPressWidget } from '@/components/site/flow/hook-press'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { HookPressDemo } from '@/components/site/demos/hook-press'
 
 export const metadata: Metadata = { title: 'The AI Harness System' }
 
@@ -16,9 +16,9 @@ export default function Page() {
         model, and behind both of them an engineer who set the whole thing up. Try it:
       </P>
 
-      <WidgetBoundary>
-        <HookPressWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <HookPressDemo />
+      </DemoBoundary>
 
       <P>
         That&rsquo;s one press: a single unit, appended to a stream. Every idea in this chapter is

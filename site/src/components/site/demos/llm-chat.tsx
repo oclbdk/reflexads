@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { DemoFrame } from '../demo-frame'
 
 // Messages map to tokens the way tokens mapped to opcodes — and this time the
 // user authors the upper stream. A sent message tokenizes down into the one
@@ -280,9 +280,9 @@ const nodeTypes = {
   chatDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function LlmChatWidget() {
+export function LlmChatDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // The conversation clock: tokenize fast, generate slower, fold once.
@@ -455,7 +455,7 @@ export function LlmChatWidget() {
           : 'folding reply'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="Messages to tokens — and back"
       hint={
         <>
@@ -468,7 +468,7 @@ export function LlmChatWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-112"
         nodes={nodes}
         edges={edges}
@@ -497,6 +497,6 @@ export function LlmChatWidget() {
           {phaseLabel} · {sim.msgs.length} msgs · {sim.toks.length} toks
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

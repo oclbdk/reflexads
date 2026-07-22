@@ -2,7 +2,7 @@ import { clsx } from 'clsx'
 
 // Lightweight prose primitives tuned for the explainer's reading column.
 // Deliberately hand-rolled (no typography plugin) so spacing and measure stay
-// under our control and match the interactive cards sitting between paragraphs.
+// under our control and match the demo cards sitting between paragraphs.
 
 export function Section({ id, children }: { id?: string; children: React.ReactNode }) {
   return (

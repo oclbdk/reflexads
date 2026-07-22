@@ -5,8 +5,8 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, PlayIcon, SparklesIcon } from '@heroicons/react/16/solid'
-import { FlowCanvas } from './flow-canvas'
-import { Em, WidgetFrame } from '../widget-frame'
+import { DemoCanvas } from './demo-canvas'
+import { Em, DemoFrame } from '../demo-frame'
 
 // External data sources, to and from. A weather service — whose state the
 // user controls — is read by both routes, differently: code reads it at
@@ -377,9 +377,9 @@ const nodeTypes = {
   extDisplay: DisplayNode,
 }
 
-// ---- the widget ---------------------------------------------------------
+// ---- the demo ---------------------------------------------------------
 
-export function LlmExternalWidget() {
+export function LlmExternalDemo() {
   const [sim, setSim] = useState<Sim>(INITIAL)
 
   // Route clock: code loads; prose reads, tool-calls, hears back, generates.
@@ -679,7 +679,7 @@ export function LlmExternalWidget() {
               : 'interpreting'
 
   return (
-    <WidgetFrame
+    <DemoFrame
       title="External data, to and from"
       hint={
         <>
@@ -692,7 +692,7 @@ export function LlmExternalWidget() {
         </>
       }
     >
-      <FlowCanvas
+      <DemoCanvas
         className="h-116"
         nodes={nodes}
         edges={edges}
@@ -725,6 +725,6 @@ export function LlmExternalWidget() {
           {statusLabel}
         </span>
       </div>
-    </WidgetFrame>
+    </DemoFrame>
   )
 }

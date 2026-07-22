@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import { SectionShell } from '@/components/site/section-shell'
 import { P } from '@/components/site/prose'
-import { WidgetBoundary } from '@/components/site/widget-boundary'
-import { EngineerLoopWidget } from '@/components/site/flow/engineer-loop'
-import { EngineerOrientWidget } from '@/components/site/flow/engineer-orient'
-import { EngineerSteerWidget } from '@/components/site/flow/engineer-steer'
-import { EngineerConditionWidget } from '@/components/site/flow/engineer-condition'
+import { DemoBoundary } from '@/components/site/demo-boundary'
+import { EngineerLoopDemo } from '@/components/site/demos/engineer-loop'
+import { EngineerOrientDemo } from '@/components/site/demos/engineer-orient'
+import { EngineerSteerDemo } from '@/components/site/demos/engineer-steer'
+import { EngineerConditionDemo } from '@/components/site/demos/engineer-condition'
 
 export const metadata: Metadata = { title: 'The Role of Engineer' }
 
@@ -17,30 +17,30 @@ export default function Page() {
         and it closes its loop the only way it can, by looking at the display:
       </P>
 
-      <WidgetBoundary>
-        <EngineerLoopWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <EngineerLoopDemo />
+      </DemoBoundary>
 
       <P>Its real lever is choosing where to point its attention. Every choice ends up in the same place:</P>
 
-      <WidgetBoundary>
-        <EngineerOrientWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <EngineerOrientDemo />
+      </DemoBoundary>
 
       <P>And influence loops. Outputs can condition the outputs that come after them:</P>
 
-      <WidgetBoundary>
-        <EngineerSteerWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <EngineerSteerDemo />
+      </DemoBoundary>
 
       <P>
         Taken to its logical end, every file that conditions the system has two hands on it, and
         both write through the same stream:
       </P>
 
-      <WidgetBoundary>
-        <EngineerConditionWidget />
-      </WidgetBoundary>
+      <DemoBoundary>
+        <EngineerConditionDemo />
+      </DemoBoundary>
     </SectionShell>
   )
 }
