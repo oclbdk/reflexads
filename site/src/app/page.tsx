@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRightIcon } from '@heroicons/react/16/solid'
 import { chapterHref, chapters } from '@/data/chapters'
+import { Unit } from '@/components/site/prose'
 
 export default function Home() {
   return (
@@ -13,9 +14,9 @@ export default function Home() {
           Structural conditions of self-improving systems
         </p>
         <p className="mt-4 text-base/7 text-zinc-500 dark:text-zinc-400">
-          An interactive study of AI harnesses: systems that feed code, prose, and data back into
-          their own operations, and the structural conditions that let them improve themselves
-          while staying interpretable.
+          An interactive study of AI harnesses: systems that feed <Unit kind="code" />,{' '}
+          <Unit kind="prose" />, and <Unit kind="data" />{' '}back into their own operations, and
+          the bounded scopes that let them improve themselves while staying interpretable.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link

@@ -39,6 +39,20 @@ export function Term({ children }: { children: React.ReactNode }) {
   return <strong className="font-semibold text-zinc-950 dark:text-white">{children}</strong>
 }
 
+// The three strata of an AI harness's material — code, prose, data — wear a
+// fixed typographic identity wherever running text names them as units: mono,
+// in the same colors their chips carry inside the diagrams (code amber, prose
+// violet, data sky). Renders the canonical lowercase word, even mid-sentence.
+const UNIT_COLOR = {
+  code: 'text-amber-700 dark:text-amber-400',
+  prose: 'text-violet-700 dark:text-violet-400',
+  data: 'text-sky-700 dark:text-sky-400',
+} as const
+
+export function Unit({ kind }: { kind: keyof typeof UNIT_COLOR }) {
+  return <span className={clsx('font-mono text-[0.9em] font-semibold', UNIT_COLOR[kind])}>{kind}</span>
+}
+
 export function InlineCode({ children }: { children: React.ReactNode }) {
   return (
     <code

@@ -6,6 +6,7 @@ import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, SparklesIcon } from '@heroicons/react/16/solid'
 import { FlowCanvas } from './flow-canvas'
+import { Unit } from '../prose'
 import { WidgetFrame } from '../widget-frame'
 
 // The Role of Engineer, second flow — mechanism, not workflow. The engineer's
@@ -234,7 +235,7 @@ function CodeNode({ data }: NodeProps) {
     >
       <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
         smiley.asm
-        <span className="rounded-sm bg-zinc-100 px-1 text-[9px] text-zinc-500 dark:bg-white/10 dark:text-zinc-400">code</span>
+        <span className="rounded-sm bg-amber-500/10 px-1 text-[9px] text-amber-700 dark:text-amber-400">code</span>
         <span className={clsx('rounded-sm px-1 text-[9px]', v > 1 ? 'bg-teal-500/10 text-teal-600 dark:text-teal-400' : 'text-zinc-400')}>
           v{v}
         </span>
@@ -265,7 +266,7 @@ function ProseNode({ data }: NodeProps) {
     >
       <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
         smiley.txt
-        <span className="rounded-sm bg-violet-500/10 px-1 text-[9px] text-violet-500 dark:text-violet-400">prose</span>
+        <span className="rounded-sm bg-violet-500/10 px-1 text-[9px] text-violet-700 dark:text-violet-400">prose</span>
         <span className={clsx('rounded-sm px-1 text-[9px]', v > 1 ? 'bg-teal-500/10 text-teal-600 dark:text-teal-400' : 'text-zinc-400')}>
           v{v}
         </span>
@@ -308,7 +309,7 @@ function DataNode({ data }: NodeProps) {
         <div>
           <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
             frame.dat
-            <span className="rounded-sm bg-sky-500/10 px-1 text-[9px] text-sky-500 dark:text-sky-400">data</span>
+            <span className="rounded-sm bg-sky-500/10 px-1 text-[9px] text-sky-700 dark:text-sky-400">data</span>
             <span className={clsx('rounded-sm px-1 text-[9px]', v > 1 ? 'bg-teal-500/10 text-teal-600 dark:text-teal-400' : 'text-zinc-400')}>
               v{v}
             </span>
@@ -847,7 +848,8 @@ export function EngineerOrientWidget() {
       title="Four orientations, one stream"
       hint={
         <>
-          The engineer&rsquo;s lever is where to orient attention — code, prose, recorded data, or
+          The engineer&rsquo;s lever is where to orient attention — <Unit kind="code" />, <Unit kind="prose" />, recorded{' '}
+          <Unit kind="data" />, or
           the model live — and each choice has a signature: code expands exactly and ahead of time;
           prose is interpreted at run time and varies; data recalls a whole recorded frame in one
           op; a live message is negotiated token by token. Every one of them lands in the same

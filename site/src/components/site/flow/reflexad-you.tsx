@@ -6,6 +6,7 @@ import { Handle, Position } from '@xyflow/react'
 import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { FlowCanvas } from './flow-canvas'
+import { Unit } from '../prose'
 import { Em, WidgetFrame } from '../widget-frame'
 
 // The Role of You — the component architecture of the AI harness system this
@@ -95,13 +96,13 @@ function DocNode({ data }: NodeProps) {
         This documentation
       </div>
       <div className="mt-1 flex justify-center gap-1.5">
-        <span className="rounded-md bg-violet-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-violet-600 dark:text-violet-400">
+        <span className="rounded-md bg-violet-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-violet-700 dark:text-violet-400">
           prose
         </span>
-        <span className="rounded-md bg-amber-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-600 dark:text-amber-400">
+        <span className="rounded-md bg-amber-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-amber-700 dark:text-amber-400">
           code
         </span>
-        <span className="rounded-md bg-sky-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-sky-600 dark:text-sky-400">
+        <span className="rounded-md bg-sky-500/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-sky-700 dark:text-sky-400">
           data
         </span>
       </div>
@@ -543,7 +544,8 @@ export function ReflexadYouWidget() {
         <>
           <span className="block">
             This is the component architecture of the AI harness system this documentation
-            specifies. In the center, the artifact itself: prose, code, data. Around it, the three
+            specifies. In the center, the artifact itself: <Unit kind="prose" />, <Unit kind="code" />,{' '}
+            <Unit kind="data" />. Around it, the three
             roles that consume it, each in its native medium at its native clock, with the
             CPU&rsquo;s output landing in an application domain (an abstract resource economy under
             the system&rsquo;s operational maintenance, and the extension point where a concrete

@@ -191,7 +191,7 @@ function CodeNode({ data }: NodeProps) {
     >
       <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
         frame.asm
-        <span className="rounded-sm bg-zinc-100 px-1 text-[9px] text-zinc-500 dark:bg-white/10 dark:text-zinc-400">code</span>
+        <span className="rounded-sm bg-amber-500/10 px-1 text-[9px] text-amber-700 dark:text-amber-400">code</span>
         <ByBadge v={v} by={by} />
       </div>
       <div className="text-[9px]/4 text-zinc-400 dark:text-zinc-500">
@@ -221,7 +221,7 @@ function ProseNode({ data }: NodeProps) {
     >
       <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
         brief.txt
-        <span className="rounded-sm bg-violet-500/10 px-1 text-[9px] text-violet-500 dark:text-violet-400">prose</span>
+        <span className="rounded-sm bg-violet-500/10 px-1 text-[9px] text-violet-700 dark:text-violet-400">prose</span>
         <ByBadge v={v} by={by} />
       </div>
       <div className="font-mono text-[9px]/4 text-zinc-400 italic dark:text-zinc-500">
@@ -251,7 +251,7 @@ function DataNode({ data }: NodeProps) {
     >
       <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
         notes.dat
-        <span className="rounded-sm bg-sky-500/10 px-1 text-[9px] text-sky-500 dark:text-sky-400">data</span>
+        <span className="rounded-sm bg-sky-500/10 px-1 text-[9px] text-sky-700 dark:text-sky-400">data</span>
         <span className="rounded-sm px-1 text-[9px] text-zinc-400">{notes.length}</span>
       </div>
       <ol className="mt-0.5 font-mono text-[9px]/4">

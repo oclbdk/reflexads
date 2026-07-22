@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: 'Reflexads',
   },
   description:
-    'An interactive study of AI harnesses: systems that feed code, prose, and data back into their own operations, and the structural conditions that let them improve themselves while staying interpretable.',
+    'An interactive study of AI harnesses: systems that feed code, prose, and data back into their own operations, and the bounded scopes that let them improve themselves while staying interpretable.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

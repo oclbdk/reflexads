@@ -144,7 +144,7 @@ function FsNode({ data }: NodeProps) {
       >
         <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
           weather.asm
-          <span className="rounded-sm bg-zinc-100 px-1 text-[9px] text-zinc-500 dark:bg-white/10 dark:text-zinc-400">
+          <span className="rounded-sm bg-amber-500/10 px-1 text-[9px] text-amber-700 dark:text-amber-400">
             code
           </span>
         </div>
@@ -157,7 +157,7 @@ function FsNode({ data }: NodeProps) {
       >
         <div className="flex items-baseline gap-1.5 font-mono text-[11px] text-zinc-700 dark:text-zinc-200">
           weather.txt
-          <span className="rounded-sm bg-violet-500/10 px-1 text-[9px] text-violet-500 dark:text-violet-400">
+          <span className="rounded-sm bg-violet-500/10 px-1 text-[9px] text-violet-700 dark:text-violet-400">
             prose
           </span>
         </div>

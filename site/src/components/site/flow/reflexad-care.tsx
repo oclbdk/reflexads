@@ -6,6 +6,7 @@ import type { Edge, Node, NodeProps } from '@xyflow/react'
 import { clsx } from 'clsx'
 import { ArrowPathIcon, PlayIcon } from '@heroicons/react/16/solid'
 import { FlowCanvas } from './flow-canvas'
+import { Unit } from '../prose'
 import { Em, WidgetFrame } from '../widget-frame'
 
 // REFLEXAD your digital pet — the care stack as a continuous game, with the
@@ -880,9 +881,9 @@ export function ReflexadCareWidget() {
             own currency. It bridges the two systems by itself, but folding drains it.
           </span>
           <span className="mt-2 block">
-            Each supply type cares for the facet it governs. <Em>code</Em>{' '}feeds its energy (too
-            hungry, it skips folds). <Em>prose</Em>{' '}briefs its focus (unfocused, it folds
-            knowledge back to the system that already had it). <Em>data</Em>{' '}curates its memory
+            Each supply type cares for the facet it governs. <Unit kind="code" />{' '}feeds its energy (too
+            hungry, it skips folds). <Unit kind="prose" />{' '}briefs its focus (unfocused, it folds
+            knowledge back to the system that already had it). <Unit kind="data" />{' '}curates its memory
             (dirty, its folds go sloppy, then garbled).
           </span>
           <span className="mt-2 block">
@@ -910,15 +911,15 @@ export function ReflexadCareWidget() {
           <PlayIcon className="size-4" /> Adopt
         </button>
         <button onClick={() => spend('code')} disabled={!running || sim.supplies.code < 1} className={btn}>
-          <span className="font-mono text-xs text-amber-600 dark:text-amber-400">code</span> Feed (
+          <span className="font-mono text-xs text-amber-700 dark:text-amber-400">code</span> Feed (
         {sim.supplies.code})
         </button>
         <button onClick={() => spend('prose')} disabled={!running || sim.supplies.prose < 1} className={btn}>
-          <span className="font-mono text-xs text-violet-600 dark:text-violet-400">prose</span> Brief (
+          <span className="font-mono text-xs text-violet-700 dark:text-violet-400">prose</span> Brief (
         {sim.supplies.prose})
         </button>
         <button onClick={() => spend('data')} disabled={!running || sim.supplies.data < 1} className={btn}>
-          <span className="font-mono text-xs text-sky-600 dark:text-sky-400">data</span> Curate (
+          <span className="font-mono text-xs text-sky-700 dark:text-sky-400">data</span> Curate (
         {sim.supplies.data})
         </button>
         <button onClick={reset} className={btn}>
