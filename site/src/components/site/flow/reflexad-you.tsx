@@ -8,7 +8,7 @@ import { clsx } from 'clsx'
 import { FlowCanvas } from './flow-canvas'
 import { Em, WidgetFrame } from '../widget-frame'
 
-// The Role of You — the component architecture of the AI Harness system this
+// The Role of You — the component architecture of the AI harness system this
 // documentation specifies, as an interactive diagram. Center: the artifact
 // (prose, code, data). Around it: the three roles that consume it. Attaching
 // a "YOU" token is the system's ownership model: it instantiates a reader at
@@ -542,7 +542,7 @@ export function ReflexadYouWidget() {
       hint={
         <>
           <span className="block">
-            This is the component architecture of the AI Harness system this documentation
+            This is the component architecture of the AI harness system this documentation
             specifies. In the center, the artifact itself: prose, code, data. Around it, the three
             roles that consume it, each in its native medium at its native clock, with the
             CPU&rsquo;s output landing in an application domain (an abstract resource economy under

@@ -47,7 +47,7 @@ export const chapters: Chapter[] = [
     number: 2,
     slug: 'contextualized-ownership',
     title: 'Contextualized Ownership',
-    tagline: "This site's repo, documented as its own AI Harness: one record, and the scopes that own it.",
+    tagline: "This site's repo, documented as its own AI harness: one record, and the scopes that own it.",
     arc: 'The Two Faces',
     module: 'Chapter02',
   },

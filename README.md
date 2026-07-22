@@ -37,7 +37,7 @@ The book and the site differ in register and in currency:
   archival, citable form.
 - **The site** is where the framing is actively evolving. Its
   [chapter 1](https://oclbdk.github.io/reflexads/chapters/introduction/the-ai-harness-system/)
-  is a standalone interactive short book on the **AI Harness system**: seven
+  is a standalone interactive short book on the **AI harness system**: seven
   sections of live diagrams that build from a single button press up to a
   precise ownership model of how a harness's interactions influence its own
   later behavior. The site's remaining chapters are legacy placeholders from

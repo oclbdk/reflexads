@@ -2,7 +2,7 @@
 
 The interactive face of the Reflexads work. Next.js static export, deployed to
 GitHub Pages at <https://oclbdk.github.io/reflexads>. Chapter 1 is the current
-framing: a standalone interactive short book on the AI Harness system, split
+framing: a standalone interactive short book on the AI harness system, split
 into seven section subpages. Chapters 2–7 are legacy placeholders from the
 book's framing (flagged in `src/data/chapters.ts`), reworked incrementally.
 

@@ -5,7 +5,7 @@ import { H2, P } from '@/components/site/prose'
 
 export const metadata: Metadata = { title: 'Contextualized Ownership' }
 
-// Chapter 2 — this repository, documented as its own AI Harness. Scaffold:
+// Chapter 2 — this repository, documented as its own AI harness. Scaffold:
 // section stubs only, built out one widget at a time the way chapter 1 was.
 // The ground is the git record; the display surface is the rendered site;
 // refladic scopes layer the one into the other.

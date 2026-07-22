@@ -7,7 +7,7 @@ export default function Home() {
     <div className="mx-auto max-w-3xl">
       <section className="border-b border-zinc-950/5 pb-12 dark:border-white/10">
         <h1 className="text-4xl/tight font-semibold tracking-tight text-zinc-950 sm:text-5xl/tight dark:text-white">
-          Designing AI Harnesses
+          The Logic of AI Harnesses
         </h1>
         <p className="mt-3 text-xl/8 font-medium text-zinc-600 dark:text-zinc-300">
           Systems That Contextually Host Their Own Conditions
