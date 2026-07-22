@@ -10,12 +10,12 @@ export default function Home() {
           The Logic of AI Harnesses
         </h1>
         <p className="mt-3 text-xl/8 font-medium text-zinc-600 dark:text-zinc-300">
-          Systems That Contextually Host Their Own Conditions
+          Structural conditions of self-improving systems
         </p>
         <p className="mt-4 text-base/7 text-zinc-500 dark:text-zinc-400">
-          An interactive guide that explores how engineers can reason about looping effects in
-          computational workflows, like AI contexts that feed code, prose, and data sources back
-          into their own operations.
+          An interactive study of AI harnesses: systems that feed code, prose, and data back into
+          their own operations, and the structural conditions that let them improve themselves
+          while staying interpretable.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link

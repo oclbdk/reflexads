@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: 'Reflexads',
   },
   description:
-    'An interactive guide that explores how engineers can reason about looping effects in computational workflows, like AI contexts that feed code, prose, and data sources back into their own operations.',
+    'An interactive study of AI harnesses: systems that feed code, prose, and data back into their own operations, and the structural conditions that let them improve themselves while staying interpretable.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
