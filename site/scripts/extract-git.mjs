@@ -93,7 +93,20 @@ function extract() {
 
   const builtFrom = git(['rev-parse', '--short', 'HEAD']).trim()
   const shallow = git(['rev-parse', '--is-shallow-repository']).trim() === 'true'
-  return { builtFrom, shallow, commits }
+
+  // The remote, normalized to a browsable URL, so demos can link each
+  // revision to its page — and forks link to their own record for free.
+  let remote = null
+  try {
+    remote = git(['config', '--get', 'remote.origin.url'])
+      .trim()
+      .replace(/^git@([^:]+):/, 'https://$1/')
+      .replace(/\.git$/, '')
+  } catch {
+    // no remote — links degrade to plain text
+  }
+
+  return { builtFrom, shallow, remote, commits }
 }
 
 let record
@@ -104,7 +117,7 @@ try {
   }
 } catch (err) {
   console.warn('[extract-git] no git history available, writing empty record:', err.message?.split('\n')[0])
-  record = { builtFrom: null, shallow: true, commits: [] }
+  record = { builtFrom: null, shallow: true, remote: null, commits: [] }
 }
 
 mkdirSync(outDir, { recursive: true })

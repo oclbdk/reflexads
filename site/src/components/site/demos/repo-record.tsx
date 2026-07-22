@@ -30,6 +30,12 @@ type Commit = {
 
 const COMMITS = gitData.commits as Commit[]
 const BUILT_FROM = gitData.builtFrom as string | null
+const REMOTE = gitData.remote as string | null
+
+// Every revision links to its page on the remote (a fork links to its own).
+function commitUrl(full: string): string | null {
+  return REMOTE ? `${REMOTE}/commit/${full}` : null
+}
 
 const STRATUM_BAR: Record<string, string> = {
   code: 'bg-amber-500/80',
@@ -199,7 +205,23 @@ export function RepoRecordDemo() {
           </button>
           <span className="ml-auto font-mono text-xs text-zinc-500 tabular-nums dark:text-zinc-400">
             {COMMITS.length} revisions · two hands on every one
-            {BUILT_FROM ? <> · built from <span className="text-reflex-600 dark:text-reflex-500">{BUILT_FROM}</span></> : null}
+            {BUILT_FROM ? (
+              <>
+                {' '}· built from{' '}
+                {REMOTE ? (
+                  <a
+                    href={`${REMOTE}/commit/${BUILT_FROM}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-reflex-600 underline decoration-reflex-500/40 underline-offset-2 hover:text-reflex-700 dark:text-reflex-500"
+                  >
+                    {BUILT_FROM}
+                  </a>
+                ) : (
+                  <span className="text-reflex-600 dark:text-reflex-500">{BUILT_FROM}</span>
+                )}
+              </>
+            ) : null}
           </span>
         </div>
 
@@ -207,7 +229,19 @@ export function RepoRecordDemo() {
         {sel ? (
           <div className="rounded-lg bg-zinc-50 p-3 ring-1 ring-zinc-950/5 dark:bg-white/[0.03] dark:ring-white/10">
             <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-              <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500">{sel.hash}</span>
+              {commitUrl(sel.full) ? (
+                <a
+                  href={commitUrl(sel.full)!}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-you-skip
+                  className="font-mono text-xs text-zinc-400 underline decoration-zinc-300 underline-offset-2 hover:text-reflex-600 dark:text-zinc-500 dark:decoration-zinc-600 dark:hover:text-reflex-500"
+                >
+                  {sel.hash}
+                </a>
+              ) : (
+                <span className="font-mono text-xs text-zinc-400 dark:text-zinc-500">{sel.hash}</span>
+              )}
               <span className="text-sm font-medium text-zinc-800 dark:text-zinc-100">{sel.subject}</span>
               <span className="ml-auto font-mono text-[10px] text-zinc-400 dark:text-zinc-500">
                 {sel.date.slice(0, 10)}
