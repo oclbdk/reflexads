@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRightIcon } from '@heroicons/react/16/solid'
+import { ArrowRightIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/16/solid'
 import { chapterHref, chapters } from '@/data/chapters'
 import { Unit } from '@/components/site/prose'
 
@@ -25,13 +25,13 @@ export default function Home() {
           >
             Start reading <ArrowRightIcon className="size-4" />
           </Link>
-          <a
-            href="https://github.com/oclbdk/reflexads"
+          <Link
+            href="/contribute/"
             target="_blank"
             className="inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-medium text-zinc-700 ring-1 ring-zinc-950/10 hover:bg-zinc-50 dark:text-zinc-200 dark:ring-white/10 dark:hover:bg-white/5"
           >
-            Source &amp; PDF
-          </a>
+            How to contribute? <ArrowTopRightOnSquareIcon className="size-3.5 text-zinc-400 dark:text-zinc-500" />
+          </Link>
         </div>
       </section>
 

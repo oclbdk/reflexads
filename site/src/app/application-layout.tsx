@@ -2,7 +2,13 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { BookOpenIcon, CodeBracketSquareIcon, DocumentArrowDownIcon } from '@heroicons/react/20/solid'
+import {
+  ArrowsRightLeftIcon,
+  ArrowTopRightOnSquareIcon,
+  BookOpenIcon,
+  CodeBracketSquareIcon,
+  DocumentArrowDownIcon,
+} from '@heroicons/react/20/solid'
 import { Navbar, NavbarItem, NavbarSection, NavbarSpacer } from '@/components/navbar'
 import {
   Sidebar,
@@ -91,6 +97,14 @@ function AppSidebar({ pathname }: { pathname: string }) {
             <CodeBracketSquareIcon />
             <SidebarLabel>The Agda library</SidebarLabel>
           </SidebarItem>
+          {/* /contribute is its own site — the book always opens it in a new page */}
+          <SidebarItem href="/contribute/" target="_blank">
+            <ArrowsRightLeftIcon />
+            <SidebarLabel className="flex items-center gap-1.5">
+              Contributing
+              <ArrowTopRightOnSquareIcon className="size-3.5 text-zinc-400 dark:text-zinc-500" />
+            </SidebarLabel>
+          </SidebarItem>
           <SidebarItem href={GITHUB_URL} target="_blank">
             <DocumentArrowDownIcon />
             <SidebarLabel>Source &amp; PDF</SidebarLabel>
@@ -101,8 +115,44 @@ function AppSidebar({ pathname }: { pathname: string }) {
   )
 }
 
+// The /contribute mini-site wears its own chrome: no book sidebar, its own
+// wordmark, and a marked, new-page link back to the book. The book's links to
+// it are marked the same way — two sites, one repo. Its source links come
+// from the serving repo's own remote (extracted at build time), so a fork's
+// guide points at the fork — the page never names any particular instance.
+function ContributeShell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="min-h-svh bg-paper dark:bg-zinc-900">
+      <header className="sticky top-0 z-10 border-b border-zinc-950/5 bg-paper/90 backdrop-blur dark:border-white/10 dark:bg-zinc-900/90">
+        <div className="mx-auto flex max-w-2xl items-center gap-3 px-6 py-3">
+          <Link
+            href="/contribute/"
+            className="flex items-center gap-2 text-sm/5 font-semibold text-zinc-950 dark:text-white"
+          >
+            <ArrowsRightLeftIcon className="size-5 shrink-0" />
+            Contributor&rsquo;s Guide
+          </Link>
+          <Link
+            href="/"
+            target="_blank"
+            className="ml-auto flex items-center gap-1.5 text-sm text-zinc-600 hover:text-zinc-950 dark:text-zinc-300 dark:hover:text-white"
+          >
+            <BookOpenIcon className="size-4" />
+            Reflexads
+            <ArrowTopRightOnSquareIcon className="size-3.5 text-zinc-400 dark:text-zinc-500" />
+          </Link>
+        </div>
+      </header>
+      <div className="px-6 py-10 lg:py-14">{children}</div>
+    </div>
+  )
+}
+
 export function ApplicationLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  if (pathname.startsWith('/contribute')) {
+    return <ContributeShell>{children}</ContributeShell>
+  }
   return (
     <SidebarLayout
       navbar={
