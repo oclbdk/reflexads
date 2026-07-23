@@ -4,6 +4,9 @@ import { ChapterShell } from '@/components/site/chapter-shell'
 import { H2, P, Unit } from '@/components/site/prose'
 import { DemoBoundary } from '@/components/site/demo-boundary'
 import { RepoRecordDemo } from '@/components/site/demos/repo-record'
+import { DevLoopDemo } from '@/components/site/demos/dev-loop'
+import { SteerLoopDemo } from '@/components/site/demos/steer-loop'
+import { PolicyLoopDemo } from '@/components/site/demos/policy-loop'
 
 export const metadata: Metadata = { title: 'Contextualized Ownership' }
 
@@ -120,14 +123,68 @@ export default function Page() {
 
       <SectionHeading id="writing-files" />
       <P>
-        Interactions at the finest grain: file writes landing in a working tree — the tangle
+        Interactions at the finest grain: file writes landing in a filesystem — the tangle
         before anything is serialized. Every write touches one of three strata:{' '}
         <Unit kind="code" />, <Unit kind="prose" />, <Unit kind="data" />.
       </P>
-      <Stub>
-        The review reflex, <code className="font-mono text-xs">git diff</code>: sample what you
-        just did before deciding what to do next — the tangle observed before serialization.
-      </Stub>
+      <P>
+        Here is that loop at chapter 1&rsquo;s scale — the base application this chapter will
+        keep extending, with you in the engineer&rsquo;s seat and the whole system as the
+        harness. The flow runs one way: patches land in the filesystem, the dev server folds
+        the filesystem the moment it changes, and the page is reconstructed from the files, every
+        time, from nothing else. Even drawing on the page persists through a buffered save
+        handler into the same filesystem, and comes back as a no-op reload. Those constraints are not
+        incidental — they are what keeps the loop from thrashing. A harness that lets its
+        display re-trigger builds, or its model read its own uncommitted output, garbles the
+        very context it works from; here every effect must land coherently in the filesystem before
+        anything downstream sees it, and the site has no way to steer the model at all. The
+        context carries the working state, the write-loops are guarded at the fold — and that
+        is the seed of the refladic loop, planted. Growing it safely is where this chapter goes
+        next.
+      </P>
+      <DemoBoundary>
+        <DevLoopDemo />
+      </DemoBoundary>
+
+      <P>
+        Now grow the loop — carefully. The application below is the same system one feature
+        later: the page has learned to <em>wish</em>. And the lesson it carries is a separation:
+        <em> staging context</em> is one act, <em>driving a response</em> is another. The
+        request chips stage — they persist intent into{' '}
+        <code className="font-mono text-[0.9em]">steer.md</code> through the same buffered save
+        handler, where it sits in the filesystem, inspectable and replaceable, waking no one. The
+        prompt drives — it pulls whatever is staged into exactly one response, honored and
+        consumed. Notice what did not grow: no new channel, no new edge, and the message history
+        never changes shape. A harness that fuses these two acts turns every flicker of UI into
+        a model call; one that separates them lets the site steer the model without ever
+        touching the wheel mid-turn. The refladic loop takes its first step.
+      </P>
+      <DemoBoundary>
+        <SteerLoopDemo />
+      </DemoBoundary>
+
+      <P>
+        One more turn: steer the steering. The difference between first- and second-order
+        steering is a difference in <em>lifetime</em>. A request is a queue entry — staged,
+        pulled, consumed exactly once. A <em>disposition</em> is a standing fact the model reads
+        on every drive:{' '}
+        <code className="font-mono text-[0.9em]">policy.md</code>, written rarely, never
+        consumed. The demo below grows meta-chips that edit it — and these dispositions are
+        conditioned, not constant: each one reads a memory and computes its action from it.
+        &ldquo;Never repeat&rdquo; reads the conversation — a memory that is deliberately not a
+        file, so a new session wipes it while every file stands, and the standing policy
+        forgets what &ldquo;repeat&rdquo; means. &ldquo;Keep it symmetric&rdquo; reads the
+        canvas bytes — a condition maintained at every step by a repair computed from exactly
+        what&rsquo;s there, your own doodles included. Nothing new was built to make this
+        possible — same save handler, same fold, one more file — and the dispositions outlive
+        the app that set them: kill the page and its controls, and the policy still stands in
+        the filesystem, governing the rebuild. The context now carries not just the working
+        state but the conditions on it, and every lifetime sorts itself by where it lives —
+        which is the chapter&rsquo;s whole argument in one loop.
+      </P>
+      <DemoBoundary>
+        <PolicyLoopDemo />
+      </DemoBoundary>
 
       <SectionHeading id="committing-revisions" />
       <P>
